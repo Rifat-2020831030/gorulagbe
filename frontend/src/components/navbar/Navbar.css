@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: lightcoral;
+  height: 5vh;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  padding-right: 40px;
+}
+
+.contact {
+  border-radius: 50px;
+  background-color: rgb(92, 240, 89, 1);
+  padding: 10px 38px;
+  text-align: center;
+}
+
+.contact:hover {
+  background-color: rgba(92, 240, 89, 0.8);
+}

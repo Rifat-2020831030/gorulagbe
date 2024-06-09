@@ -1,0 +1,50 @@
+.hero{
+    position: absolute;
+    left: 15%;
+    top: 40%;
+}
+.hero-content h1{
+    font-size: 50px;
+    color: white;
+}
+.hero-content p{
+    font-size: 30px;
+    margin-bottom: 80px;
+    color: white;
+}
+
+.btn-outline-secondary{
+    padding: 10px 40px;
+    background: rgba(92, 240, 89, 0.8);
+}
+.btn-outline-secondary:hover{
+    background-color: rgba(92, 240, 89, 1);
+}
+.dotPanel{
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 15px;
+    /* list-style: none; */
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    text-align: center;
+}
+.dotPanel li{
+    display: inline-block;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.dotPanel .active{
+    background: rgba(255, 255, 255, 0.509);
+    border-color: white;
+}
+
+
