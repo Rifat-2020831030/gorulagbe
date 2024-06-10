@@ -3,6 +3,8 @@ import Background from "../components/Background/Background";
 import Hero from "../components/hero/Hero";
 import CattleList from "../components/cattle-list/CattleList";
 import CategoryList from "../components/category/CategoryList";
+import LiveAuction from "../components/live-auction/LiveAuction";
+import ButcherList from "../components/butcher/butcherList/ButcherList";
 
 function App() {
   // state
@@ -42,6 +44,8 @@ function App() {
         <CattleList />
       </div>
       <CategoryList />
+      <LiveAuction startTime = {"12-06-2024"} endTime={"14-06-2024"} info={""} />
+      <ButcherList />
     </div>
   );
 }

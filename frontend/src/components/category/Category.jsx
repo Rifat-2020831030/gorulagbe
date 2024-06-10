@@ -3,7 +3,7 @@ import React from 'react';
 import "./Category.css";
 
 
-const Category = ({key, category, image}) => {
+const Category = ({index, category, image}) => {
     // const images = [meat, bone, camel, mutton, sausage, steak];
     return (
         <>
