@@ -1,0 +1,27 @@
+.categoryList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    flex-wrap: wrap;
+    margin: 20px 50px;
+}
+
+.category-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.subheading{
+    font-size: 30px;
+}
