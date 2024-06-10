@@ -1,11 +1,11 @@
 import React from "react";
 import "./CattleCard.css";
-import cow1 from "../../assets/cow1.jpg";
 
-const CattleCard = ({ cattle }) => {
+
+const CattleCard = ({ cattle , cow_image}) => {
   return (
     <div className="cattle-card">
-      <img src={cow1} alt={cattle.name} className="cattle-image" />
+      <img src={cow_image} alt={cattle.name} className="cattle-image" />
       <div className="cattle-info">
         <div className="cattle-header">
           <span className="cattle-id">{cattle.id}</span>

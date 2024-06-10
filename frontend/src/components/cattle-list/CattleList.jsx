@@ -1,6 +1,7 @@
 import React from "react";
 import CattleCard from "../cattle-card/CattleCard";
 import "./CattleList.css";
+import cow1 from "../../assets/cow1.jpg";
 
 const cattleData = [
   {
@@ -46,13 +47,14 @@ const cattleData = [
 ];
 
 const CattleList = () => {
+  const cow_images = [cow1, cow1, cow1, cow1]; 
   return (
     <div className="cattle-list">
-      <h2>Featured Cattle</h2>
-      <p>Choose from our best cattle for your Qurbani</p>
+      <h2 className="heading">Featured Cattle</h2>
+      <p className="subheading">Choose from our best cattle for your Qurbani</p>
       <div className="cattle-cards">
-        {cattleData.map((cattle) => (
-          <CattleCard key={cattle.id} cattle={cattle} />
+        {cattleData.map((cattle,index) => (
+          <CattleCard key={cattle.id} cattle={cattle} cow_image = {cow_images[index]}/>
         ))}
       </div>
       <button className="view-all-button">VIEW ALL</button>

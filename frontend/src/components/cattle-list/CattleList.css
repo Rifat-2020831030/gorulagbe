@@ -1,38 +1,30 @@
 /* src/components/cattle-list/CattleList.css */
 .cattle-list {
-    padding: 20px;
-    text-align: center;
-    margin-top: 60px;
-    background: white;
-    border-radius: 8px;
-  }
-  
-  .cattle-list h2 {
-    margin-bottom: 10px;
-  }
-  
-  .cattle-list p {
-    margin-bottom: 20px;
-  }
-  
-  .cattle-cards {
-    display: flex;
-    overflow-x: auto;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .view-all-button {
-    background-color: rgb(10, 143, 8);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .view-all-button:hover {
-    background-color: rgb(18, 156, 16);
-  }
-  
+  padding: 20px;
+  text-align: center;
+  margin-top: 60px;
+  background: white;
+  border-radius: 8px;
+}
+
+.cattle-cards {
+  display: flex;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.view-all-button {
+  background-color: rgb(10, 143, 8);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.view-all-button:hover {
+  background-color: rgb(18, 156, 16);
+}
