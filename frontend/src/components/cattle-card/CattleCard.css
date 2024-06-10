@@ -1,0 +1,93 @@
+/* src/components/cattle-card/CattleCard.css */
+.cattle-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    position: relative;
+  }
+  
+  .cattle-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .cattle-info {
+    padding: 10px 0;
+  }
+  
+  .cattle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cattle-id {
+    font-weight: bold;
+  }
+  
+  .cattle-featured {
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  
+  .cattle-info h3 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .cattle-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .cattle-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .available {
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px;
+    background-color: green;
+  }
+
+  .finished{
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px;
+    background-color: red;
+  }
+  
+  .size {
+    color: #666;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  .details-button {
+    background-color: rgb(47, 240, 43);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .details-button:hover {
+    background-color: rgb(18, 156, 16);
+  }
+  
