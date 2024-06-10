@@ -15,10 +15,11 @@
 
 .btn-outline-secondary{
     padding: 10px 40px;
-    background: rgba(92, 240, 89, 0.8);
+    background-color: rgb(47, 240, 43);
 }
 .btn-outline-secondary:hover{
-    background-color: rgba(92, 240, 89, 1);
+    color: white;
+    background-color: rgb(18, 156, 16);
 }
 .dotPanel{
     position: absolute;

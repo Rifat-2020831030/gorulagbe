@@ -1,41 +1,24 @@
+// src/components/Background/Background.js
 import React from "react";
 import bg3 from "../../assets/butcher.jpg";
 import bg1 from "../../assets/cow.png";
 import bg2 from "../../assets/meat.jpg";
+import Navbar from "../navbar/Navbar";
 import "./Background.css";
 
 const Background = ({ heroIndex }) => {
-  if (heroIndex === 0) {
-    return (
+  let bgImage = bg1;
+  if (heroIndex === 1) bgImage = bg2;
+  if (heroIndex === 2) bgImage = bg3;
+
+  return (
+    <>
+      <Navbar></Navbar>
       <div className="background">
-        <img
-          className="background fade-in"
-          src={bg1}
-          alt="Background Image 1"
-        />
+        <img className="background fade-in" src={bgImage} alt="Background" />
       </div>
-    );
-  } else if (heroIndex === 1) {
-    return (
-      <div className="background">
-        <img
-          className="background fade-in"
-          src={bg2}
-          alt="Background Image 2"
-        />
-      </div>
-    );
-  } else if (heroIndex === 2) {
-    return (
-      <div className="background">
-        <img
-          className="background fade-in"
-          src={bg3}
-          alt="Background Image 3"
-        />
-      </div>
-    );
-  }
+    </>
+  );
 };
 
 export default Background;

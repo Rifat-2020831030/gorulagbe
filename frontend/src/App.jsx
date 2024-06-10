@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Background from "./components/Background/Background";
+import Cattle from "./components/cattle-card/CattleCard";
 import Hero from "./components/hero/Hero";
-import Navbar from "./components/navbar/Navbar";
+import CattleList from "./components/cattle-list/CattleList";
 
 function App() {
   // state
@@ -34,10 +35,13 @@ function App() {
   },[])
 
   return (
-    <div>
+    <div className="main">
       <Background heroIndex={heroIndex}></Background>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Hero heroIndex={heroIndex} setHeroIndex = {setHeroIndex} headingText={headingText[heroIndex]}></Hero>
+      <div className="cattle-list-container">
+        <CattleList />
+      </div>
     </div>
   );
 }
