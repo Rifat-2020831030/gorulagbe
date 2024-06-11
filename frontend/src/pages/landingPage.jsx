@@ -5,6 +5,8 @@ import CattleList from "../components/cattle-list/CattleList";
 import CategoryList from "../components/category/CategoryList";
 import LiveAuction from "../components/live-auction/LiveAuction";
 import ButcherList from "../components/butcher/butcherList/ButcherList";
+import offer from "../assets/offer.png";
+import Footer from "../components/footer/Footer";
 
 function App() {
   // state
@@ -46,8 +48,18 @@ function App() {
       <CategoryList />
       <LiveAuction startTime = {"12-06-2024"} endTime={"14-06-2024"} info={""} />
       <ButcherList />
+      <img style = {{...offerImage}}src={offer} alt="offer image" />
+      <Footer />
     </div>
   );
+}
+
+const offerImage = {
+  marginLeft: "10%", //
+  width: "80%",
+  height: "200px",
+  marginTop: "30px",
+  cursor: "pointer"
 }
 
 export default App;
