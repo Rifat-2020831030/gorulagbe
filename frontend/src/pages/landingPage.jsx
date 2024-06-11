@@ -7,6 +7,7 @@ import LiveAuction from "../components/live-auction/LiveAuction";
 import ButcherList from "../components/butcher/butcherList/ButcherList";
 import offer from "../assets/offer.png";
 import Footer from "../components/footer/Footer";
+import Recipe from "../components/recipe/recipeList/RecipeList";
 
 function App() {
   // state
@@ -48,6 +49,7 @@ function App() {
       <CategoryList />
       <LiveAuction startTime = {"12-06-2024"} endTime={"14-06-2024"} info={""} />
       <ButcherList />
+      <Recipe />
       <img style = {{...offerImage}}src={offer} alt="offer image" />
       <Footer />
     </div>

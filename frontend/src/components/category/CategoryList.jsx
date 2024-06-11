@@ -12,7 +12,7 @@ const CategoryList = () => {
     const images = [meat, bone, camel, mutton, sausage, steak];
     return (
         <>
-            <div className="category-heading">
+            <div className="section-heading">
                 <p className='heading'>Category</p>
                 <p className="subheading">All sorts of crafted meat at your doorstep</p>
             </div>
