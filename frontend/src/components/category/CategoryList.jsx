@@ -14,7 +14,7 @@ const CategoryList = () => {
         <>
             <div className="category-heading">
                 <p className='heading'>Category</p>
-                <p className="subheading">All sorts of crafted meat</p>
+                <p className="subheading">All sorts of crafted meat at your doorstep</p>
             </div>
             <div className="categoryList">
                 {categories.map((category, index)=>{
