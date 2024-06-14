@@ -50,8 +50,10 @@ const CattleList = () => {
   const cow_images = [cow1, cow1, cow1, cow1]; 
   return (
     <div className="cattle-list">
-      <h2 className="heading">Featured Cattle</h2>
-      <p className="subheading">Choose from our best cattle for your Qurbani</p>
+      <div className="section-heading">
+        <h2 className="heading">Featured Cattle</h2>
+        <p className="subheading">Choose from our best cattle for your Qurbani</p>
+      </div>
       <div className="cattle-cards">
         {cattleData.map((cattle,index) => (
           <CattleCard key={cattle.id} cattle={cattle} cow_image = {cow_images[index]}/>
