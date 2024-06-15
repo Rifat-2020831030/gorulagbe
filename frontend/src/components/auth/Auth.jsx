@@ -10,8 +10,8 @@ const Auth = ({ page, setToken }) => {
   const [district, setDistrict] = useState("");
 
   const loginHandler = () => {
-    fetch("http://localhost:5000/", {
-      method: "POST",
+    fetch("http://localhost:3000/login", {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
@@ -19,15 +19,12 @@ const Auth = ({ page, setToken }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.token) {
-          setToken(data.token);
-          localStorage.setItem("token", data.token);
-        }
+        
       });
   };
 
   const registerHandler = () => {
-    fetch("http://localhost:5000/", {
+    fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,16 +36,28 @@ const Auth = ({ page, setToken }) => {
         if (data.token) {
           setToken(data.token);
           localStorage.setItem("token", data.token);
+          console.log(data);
         }
+        else {
+          console.log(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
       });
   };
+
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (page === "login") {
-      loginHandler();
-    } else if (page === "register") {
+      // loginHandler();
+      console.log("loginHandler");
+    } else if (page === "registration") {
       registerHandler();
+      console.log("registerHandler");
+    } else {
+      console.log(page);
     }
   };
 
@@ -59,15 +68,15 @@ const Auth = ({ page, setToken }) => {
           <p className="heading">
             {page === "login" ? "Login" : "Registration"}
           </p>
-          <form action={submitHandler}>
+          <form onSubmit={submitHandler}>
             <input
-              type="text"
-              name="email"
+              type="email"
               className="input"
               placeholder="Email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              value={email}
+              // onChange={(e) => {
+              //   setEmail(e.target.value);
+              // }}
             />
             <input
               type="text"
@@ -78,16 +87,21 @@ const Auth = ({ page, setToken }) => {
                 setMobile(e.target.value);
               }}
             />
-            <div className="select-menu" style={{ display: page === "login" ? "none" : "block" }}>
+            <div
+              className="select-menu"
+              style={{ display: page === "login" ? "none" : "block" }}
+            >
               <select
                 name="role"
                 className="input"
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="Role"
+                value={role}
               >
                 <option value="">--Role</option>
                 <option value="customer">Customer</option>
                 <option value="seller">Seller</option>
+                <option value="butcher">Butcher</option>
               </select>
               {/* add a drop down menu for selecting district of bd */}
               <select
@@ -95,6 +109,7 @@ const Auth = ({ page, setToken }) => {
                 className="input"
                 onChange={(e) => setDistrict(e.target.value)}
                 placeholder="District"
+                value={district}
               >
                 <option value="">--District</option>
                 <option value="dhaka">Dhaka</option>
@@ -112,14 +127,13 @@ const Auth = ({ page, setToken }) => {
               name="password"
               className="input"
               placeholder="Password"
+              value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
 
-            <button className="form-button" onSubmit={submitHandler}>
-              Submit
-            </button>
+            <button className="form-button">Submit</button>
           </form>
         </div>
       </div>

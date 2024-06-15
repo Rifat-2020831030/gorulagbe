@@ -8,7 +8,7 @@ const AuthController = ({ page }) => {
   const getToken = () => {
     const token = localStorage.getItem("token");
     // return token;
-    return "";
+    return token;
   };
 
   const [token, setToken] = React.useState(getToken());

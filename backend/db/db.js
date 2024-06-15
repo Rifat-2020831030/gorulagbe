@@ -14,7 +14,6 @@ async function db(query, params = []) {
     // console.log(res);
     return res;
 }
-const app = [];
 
 // app.connection = connection;
 module.exports = {db};
