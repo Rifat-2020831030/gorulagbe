@@ -2,7 +2,7 @@ import "./Auth.css";
 
 import React, { useState } from "react";
 
-const Auth = ({ page, setToken }) => {
+const Auth = ({ page, setToken, setIsVisible }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
@@ -10,24 +10,31 @@ const Auth = ({ page, setToken }) => {
   const [district, setDistrict] = useState("");
 
   const loginHandler = () => {
-    fetch("http://localhost:5000/", {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(
+        { email, mobile, password }
+      ),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.token) {
-          setToken(data.token);
-          localStorage.setItem("token", data.token);
+        const {token, message, role} = data;
+        if (token) {
+          setToken(token);
+          localStorage.setItem("token", token);
+          console.log(data);
+        }
+        else {
+          alert(message);
         }
       });
   };
 
   const registerHandler = () => {
-    fetch("http://localhost:5000/", {
+    fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,32 +46,46 @@ const Auth = ({ page, setToken }) => {
         if (data.token) {
           setToken(data.token);
           localStorage.setItem("token", data.token);
+          console.log(data);
         }
+        else {
+          alert(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
       });
   };
 
+
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(page);
     if (page === "login") {
       loginHandler();
-    } else if (page === "register") {
+      console.log("loginHandler");
+    } else if (page === "registration") {
       registerHandler();
+      console.log("registerHandler");
+    } else {
+      console.log(page);
     }
   };
 
   return (
     <>
-      <div className="auth-container">
+      <div className="auth-container" >
+      <span className="modal-close" onClick={()=> {setIsVisible(false); console.log("click")} }>&times;</span>
         <div className="auth-content">
           <p className="heading">
             {page === "login" ? "Login" : "Registration"}
           </p>
-          <form action={submitHandler}>
+          <form onSubmit={submitHandler}>
             <input
-              type="text"
-              name="email"
+              type="email"
               className="input"
               placeholder="Email"
+              required = {page === "login" ? false : true}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -74,20 +95,27 @@ const Auth = ({ page, setToken }) => {
               name="mobile"
               className="input"
               placeholder="Mobile Number"
+              required = {page === "login" ? false : true}
               onChange={(e) => {
                 setMobile(e.target.value);
               }}
             />
-            <div className="select-menu" style={{ display: page === "login" ? "none" : "block" }}>
+            <div
+              className="select-menu"
+              style={{ display: page === "login" ? "none" : "block" }}
+            >
               <select
                 name="role"
                 className="input"
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="Role"
+                value={role}
+                required
               >
                 <option value="">--Role</option>
                 <option value="customer">Customer</option>
                 <option value="seller">Seller</option>
+                <option value="butcher">Butcher</option>
               </select>
               {/* add a drop down menu for selecting district of bd */}
               <select
@@ -95,6 +123,8 @@ const Auth = ({ page, setToken }) => {
                 className="input"
                 onChange={(e) => setDistrict(e.target.value)}
                 placeholder="District"
+                value={district}
+                required
               >
                 <option value="">--District</option>
                 <option value="dhaka">Dhaka</option>
@@ -112,14 +142,14 @@ const Auth = ({ page, setToken }) => {
               name="password"
               className="input"
               placeholder="Password"
+              value={password}
+              required
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
 
-            <button className="form-button" onSubmit={submitHandler}>
-              Submit
-            </button>
+            <button className="form-button" onClick={submitHandler}>Submit</button>
           </form>
         </div>
       </div>

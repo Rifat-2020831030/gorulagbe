@@ -6,14 +6,14 @@ import bg2 from "../../assets/meat.jpg";
 import Navbar from "../navbar/Navbar";
 import "./Background.css";
 
-const Background = ({ heroIndex }) => {
+const Background = ({ heroIndex , setIsVisible, setPage}) => {
   let bgImage = bg1;
   if (heroIndex === 1) bgImage = bg2;
   if (heroIndex === 2) bgImage = bg3;
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar setIsVisible={setIsVisible} setPage={setPage}></Navbar>
       <div className="background">
         <img className="background fade-in" src={bgImage} alt="Background" />
       </div>
