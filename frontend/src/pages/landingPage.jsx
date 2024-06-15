@@ -13,6 +13,8 @@ import Recipe from "../components/recipe/recipeList/RecipeList";
 function App() {
 
   let [heroIndex, setHeroIndex] = useState(0);
+  let [isVisible, setIsVisible] = useState(false);
+  let [page, setPage] = useState("");
 
   useEffect(() => {
     setInterval(() => {
@@ -24,7 +26,7 @@ function App() {
 
   return (
     <div className="main">
-      <Background heroIndex={heroIndex}></Background>
+      <Background heroIndex={heroIndex} setIsVisible={setIsVisible} setPage={setPage}></Background>
       {/* <Navbar></Navbar> */}
       <Hero
         heroIndex={heroIndex}
@@ -39,9 +41,10 @@ function App() {
       <Recipe />
       <img style={{ ...offerImage }} src={offer} alt="offer image" />
       <Footer />
+      
+      {/* show the authentication page if isvisible is true */}
+      {isVisible && <AuthController page={page} setIsVisible={setIsVisible} />}
 
-      {/* in page authentication */}
-      <AuthController page={"registration"} />
       
     </div>
   );

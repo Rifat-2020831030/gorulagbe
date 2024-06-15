@@ -25,3 +25,30 @@
   background-color: white;
   color: black;
 }
+
+.nav2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav2 button{
+  background-color: lightcoral;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  right: 10px;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+
+.profile img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  color: aliceblue;
+}

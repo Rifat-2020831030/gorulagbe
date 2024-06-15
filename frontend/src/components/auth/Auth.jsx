@@ -2,7 +2,7 @@ import "./Auth.css";
 
 import React, { useState } from "react";
 
-const Auth = ({ page, setToken }) => {
+const Auth = ({ page, setToken, setIsVisible }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
@@ -11,15 +11,25 @@ const Auth = ({ page, setToken }) => {
 
   const loginHandler = () => {
     fetch("http://localhost:3000/login", {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(
+        { email, mobile, password }
+      ),
     })
       .then((res) => res.json())
       .then((data) => {
-        
+        const {token, message, role} = data;
+        if (token) {
+          setToken(token);
+          localStorage.setItem("token", token);
+          console.log(data);
+        }
+        else {
+          alert(message);
+        }
       });
   };
 
@@ -39,7 +49,7 @@ const Auth = ({ page, setToken }) => {
           console.log(data);
         }
         else {
-          console.log(data.message);
+          alert(data.message);
         }
       })
       .catch((error) => {
@@ -50,8 +60,9 @@ const Auth = ({ page, setToken }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(page);
     if (page === "login") {
-      // loginHandler();
+      loginHandler();
       console.log("loginHandler");
     } else if (page === "registration") {
       registerHandler();
@@ -63,7 +74,8 @@ const Auth = ({ page, setToken }) => {
 
   return (
     <>
-      <div className="auth-container">
+      <div className="auth-container" >
+      <span className="modal-close" onClick={()=> {setIsVisible(false); console.log("click")} }>&times;</span>
         <div className="auth-content">
           <p className="heading">
             {page === "login" ? "Login" : "Registration"}
@@ -73,16 +85,17 @@ const Auth = ({ page, setToken }) => {
               type="email"
               className="input"
               placeholder="Email"
-              value={email}
-              // onChange={(e) => {
-              //   setEmail(e.target.value);
-              // }}
+              required = {page === "login" ? false : true}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <input
               type="text"
               name="mobile"
               className="input"
               placeholder="Mobile Number"
+              required = {page === "login" ? false : true}
               onChange={(e) => {
                 setMobile(e.target.value);
               }}
@@ -97,6 +110,7 @@ const Auth = ({ page, setToken }) => {
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="Role"
                 value={role}
+                required
               >
                 <option value="">--Role</option>
                 <option value="customer">Customer</option>
@@ -110,6 +124,7 @@ const Auth = ({ page, setToken }) => {
                 onChange={(e) => setDistrict(e.target.value)}
                 placeholder="District"
                 value={district}
+                required
               >
                 <option value="">--District</option>
                 <option value="dhaka">Dhaka</option>
@@ -128,12 +143,13 @@ const Auth = ({ page, setToken }) => {
               className="input"
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
 
-            <button className="form-button">Submit</button>
+            <button className="form-button" onClick={submitHandler}>Submit</button>
           </form>
         </div>
       </div>

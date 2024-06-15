@@ -2,18 +2,19 @@ const {db} = require('../../db/db');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const checkUserExists = async (table, email) => {
-    const userExists = await db(`SELECT * FROM ${table} WHERE email = ?`, [email]);
+const checkUserExists = async (table, email, mobile) => {
+    const userExists = await db(`SELECT * FROM ${table} WHERE email = ? OR mobile = ?`, [email, mobile]);
     return userExists.length > 0;
 };
 
 const createUser = async (req, res) => {    
     const { email, mobile, district, password, role} = req.body;
 
-    // check if the user already exists
-    const userExistsInCustomers = await checkUserExists('customers', email);
-    const userExistsInSellers = await checkUserExists('sellers', email);
-    const userExistsInButchers = await checkUserExists('butchers', email);
+    // check if the user already exists by email or mobile
+    // user have to give unique email and mobile to create an account
+    const userExistsInCustomers = await checkUserExists('customers', email, mobile);
+    const userExistsInSellers = await checkUserExists('sellers', email, mobile);
+    const userExistsInButchers = await checkUserExists('butchers', email, mobile);
 
     if(userExistsInCustomers || userExistsInSellers || userExistsInButchers) {
         return res.status(400).json({message: 'User already exists'});
@@ -27,7 +28,7 @@ const createUser = async (req, res) => {
         email,
         role
     }
-    const token = jwt.sign(payload, "process.env.secret_key");
+    const token = jwt.sign(payload, process.env.secret_key, {expiresIn: '1h'});
 
     // if the role is customer
     if(role === 'customer') {
