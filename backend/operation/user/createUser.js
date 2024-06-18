@@ -30,24 +30,41 @@ const createUser = async (req, res) => {
     }
     const token = jwt.sign(payload, process.env.secret_key, {expiresIn: '1h'});
 
-    // if the role is customer
-    if(role === 'customer') {
-        const user = await db(
-            'INSERT INTO customers (email, mobile, district, password, role) VALUES ( ?, ?, ?, ?, ?)', 
-            [email, mobile, district, hashedPassword, role]);
-    }
-    else if(role === 'seller') {
+    const sql = `INSERT INTO ${role}s (email, mobile, district, password, role) VALUES (?, ?, ?, ?, ?)`;
+    const paramas = [email, mobile, district, hashedPassword, role];
 
-        const user = await db(
-            'INSERT INTO sellers (email, mobile, district, password, role) VALUES ( ?, ?, ?, ?, ?)', 
-            [email, mobile, district, hashedPassword, role]);
-    }
-    else if(role === 'butcher') {
-        const user = await db(
-            'INSERT INTO butchers (email, mobile, district, password, role) VALUES ( ?, ?, ?, ?, ?)', 
-            [email, mobile, district, hashedPassword, role]);
-    }
-    res.status(200).json({message: 'User created successfully', token});
+    const response = 
+    await db(sql, paramas)
+    .then(result => 
+    {
+        if(response.affectedRows > 0)
+            res.status(200).json(
+            {
+                status: '1',
+                message: 'User created successfully', 
+                token, 
+                user
+            }
+            );
+        else
+            res.status(400).json(
+            {
+                status: '0',
+                message: 'User not created'
+            }
+            );
+    })
+    .catch(err => 
+    {
+        res.status(500).json(
+        {
+            status: '0',
+            message: 'User not created'
+        }
+        );
+        console.log(`Error in user creation: ${err}`);
+    });
+    
 }
 
 module.exports = {
