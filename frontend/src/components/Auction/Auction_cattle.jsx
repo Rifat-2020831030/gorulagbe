@@ -1,19 +1,32 @@
 import React from "react";
 import "./Auction_cattle.css"
+import Horizontal from "../Horizontal/horizontal_cattle_card";
+import cow1 from "../../assets/cow1.jpg";
+import cow2 from "../../assets/cow2.jpg";
+import cow3 from "../../assets/cow3.jpg";
 
 const cattle_info =
 [{
     id: "GLR 475",
-
+    name: "Male - Bull",
+    image: {cow1}
 },
 {
-
+    id: "GLR 193",
+    name: "Male - Bull",
+    image: {cow2}
+},
+{
+    id: "GLR 193",
+    name: "Male - Bull",
+    image: {cow3}
 }
 ]
 
 
-const Auction_cattle = ({ cow , cattle_image})=>{
-    const cattle_image = [cattle_info.image]
+const Auction_cattle = ()=>{
+    // const cattle_image = [cattle_info[0].image,cattle_info[1].image,cattle_info[2].image]
+    const cattle_image= [cow1,cow2,cow3]
     return(
         
         
@@ -26,12 +39,12 @@ const Auction_cattle = ({ cow , cattle_image})=>{
             <div>
                 <h2>Description</h2>
                 <form action="">
-                    <label htmlFor="">Auction name:</label>
-                    <input type="text" placeholder="Enter Auction Name" />
+                    <label htmlFor="auction_name">Auction name:</label>
+                    <input type="text" id="auction_name" placeholder="Enter Auction Name" />
                     <label htmlFor="">Starting Date:</label>
-                    <input type="text" placeholder="Day" className="day"/> :Day 
-                    <input type="text" placeholder="Month" className="day" /> :Month
-                    <input type="text" placeholder="Year" className="day"/> :Year
+                    <input type="text"  placeholder="Day"  className="day"/> :Day 
+                    <input type="text"  placeholder="Month" className="day" /> :Month
+                    <input type="text"  placeholder="Year" className="day"/> :Year
                     <label htmlFor="">Time: </label>
                     <input type="text" placeholder="00" /> : <input type="text" placeholder="00" />
                     <label htmlFor="">Ending Date:</label>
@@ -40,18 +53,11 @@ const Auction_cattle = ({ cow , cattle_image})=>{
                     <input type="text" placeholder="Year" className="day"/> :Year
                     <label htmlFor="">Time: </label>
                     <input type="text" placeholder="00" /> : <input type="text" placeholder="00" />
-
-
-                    <div className="CattleCard">
-                        <img src={cattle_image} alt={cow.name} className="cattle"/>
-                        <div className="cattle-info">
-                            <div className="cattle-header">
-                            <span className="cattle-id">{cow.id}</span>
-                            <span className="minimum_bid">Minimum Bid</span>
-                            <input type="text" placeholder="Enter Minimum Bid" />
-                            </div> 
-                        </div>
-                    </div>
+                   <div className="Add_cattle">
+                    <h2>ADD CATTLE</h2>
+                   {cattle_info.map((cattle,index)=>(
+                    <Horizontal key={cattle.id } cattle={cattle} cattle_image= {cattle_image[index]}/>
+                   ))}</div>
                 </form>
             </div>
        
