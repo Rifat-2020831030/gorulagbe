@@ -1,0 +1,95 @@
+.full{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    
+}
+
+.lefty{
+    color: rgb(36, 35, 65);
+    font-size: 19px;
+    width: 20%;
+    height: auto;
+    position: initial;
+    padding: 60px 30px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(92, 150, 160); */
+}
+.vl{
+    border-left: 2px solid black;
+    border-radius: 100px;
+    height: 1000px;
+    margin-top: 20px;
+}
+.righty{
+    width: 82%;
+    margin-right: 350px;
+    margin: 0%;
+    font-size: 15px;
+    position: initial;
+    padding: 20px;
+    
+}
+.Boxes{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    
+}
+.Statistics{
+    background-color: lightblue;
+    border-radius: 10px;
+    color: black;
+    padding: 20px 100px;
+    text-align: center;
+    margin-right: 400px;
+
+}
+.number1{
+    font-size: 15px;
+    font-weight: 600;
+}
+.number{
+    font-size: 50px;
+    font-weight: bold;
+}
+.auction{
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+}
+.auc1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+.auc2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 53px;
+}
+.Time{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 29px;
+}
+.liveAuctionBox{
+    background-color: lightcyan;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    width: 1180px;
+}
+.liveAuction{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    text-align: center;
+    font-size: large;
+}
+h2{
+    margin-right: 700px;
+}
+

@@ -15,7 +15,7 @@
                     <hr />
                     <h3>Filter by Spec</h3>
 
-                    <label htmlFor="">Teeth: </label>
+                    <label htmlFor="teeth">Teeth: </label>
                 <select name="teeth" id="teeth" >
                     <option value="No">No Teeth</option>
                     <option value="1">1</option>
