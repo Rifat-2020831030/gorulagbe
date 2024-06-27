@@ -1,3 +1,4 @@
+// remember to destructure the function
 const {createUser} = require('./createUser');
 const {login} = require('./login');
 
