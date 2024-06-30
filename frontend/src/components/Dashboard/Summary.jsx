@@ -1,6 +1,7 @@
 import React  from "react";
 import "./Summary.css"
 import HorizontalD from "./HorizontalD";
+import CattleD from "./CattleD"
 import cow1 from "../../assets/cow1.jpg";
 import cow2 from "../../assets/cow2.jpg";
 import cow3 from "../../assets/cow3.jpg";
@@ -10,17 +11,20 @@ const cattles =
     id: "GLR 4755",
     name: "Male - Bull",
     image: {cow1},
+    status: "Unsold",
     price: 80000
 },
 {
     id: "GLR 3253",
     name: "Male - Bull",
+    status: "Sold",
     image: {cow2},
     price: 125000
 },
 {
     id: "GLR 1931",
     name: "Male - Bull",
+    status: "Unsold",
     image: {cow3},
     price: 357300
 }
@@ -63,8 +67,12 @@ const Summary = () => {
             </div>
         </div>
         <div className="cattles">
-        <span><h2>Posted Cattles</h2></span>
-        <div className="postedCattleBox"></div>
+            <span><h2>Posted Cattles</h2></span>
+            <div className="postedCattleBox">
+                {cattles.map((cattle,index)=>(
+                    <CattleD key={cattle.id} cattle={cattle} cattle_image ={cattle_image[index]} />
+                ))}
+        </div>
         </div>
         </div>
         </div>

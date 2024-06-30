@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button/Confirm"
+import "./NewC.css"
 const NewC = () => {
     
     return(
@@ -15,46 +16,52 @@ const NewC = () => {
                 <div className="discount">
                     <h4>Discount</h4>
                     <hr />
-                    <div className="dis">Fixed Price</div>
-                    <div className="dis">7.5% off on Cellfin Payment</div>
-                    <div className="dis">9.5% off on membership on GoruLagbe</div>
+                    <div className="des">
+                    <span className="dis">Fixed Price</span>
+                    <span className="dis">7.5% off on Cellfin Payment</span>
+                    <span className="dis">9.5% off on membership on GoruLagbe</span>
+                    </div>
                 </div>
             </div>
             <div className="right">
-                <h3>Specification</h3>
+                <h2>Specification</h2>
                 <hr />
                 <form action="" id="form" >
-                    <label htmlFor="category">Category: </label>
+                    <label htmlFor="category" className="category">Category: </label>
                     <select name="" id="category">
                         <option value="">Cow</option>
                         <option value="">Buffalo</option>
                         <option value="">Goat</option>
                         <option value="">Camel</option>
                         <option value="">Sheep</option>
-                    </select>
-                    <label htmlFor="age">Age: </label>
-                    <input type="text" id="age" placeholder="Enter age" />
-                    <label htmlFor="breed">Breed: </label>
-                    <input type="text" id="breed" placeholder="Enter breed" />
-                    <label htmlFor="weight">Live Weight(approx:)</label>
-                    <input type="text" id="weight" placeholder="Weight(kg)"/>
-                    <label htmlFor="gender">Gender: </label>
-                    <input type="text" id="gender" placeholder="Enter gender" />
-                    <label htmlFor="colour">Colour: </label>
+                    </select><br />
+                    <label htmlFor="age" className="a">Age: </label>
+                    <input type="text" id="age" placeholder="Enter Age" />
+                    <label htmlFor="breed" className="a">Breed: </label>
+                    <input type="text" id="breed" placeholder="Enter Breed" /><br />
+                    <label htmlFor="gender" className="a">Gender: </label>
+                    <input type="text" id="gender" placeholder="Enter Gender" />
+                    <label htmlFor="weight" className="a">Live Weight(approx:)</label>
+                    <input type="text" id="weight" placeholder="Enter Weight(kg)"/><br />
+                    <label htmlFor="colour" className="a">Colour: </label>
                     <input type="text" id="colour" placeholder="Enter Colour" />
-                    <label htmlFor="height">Height: </label>
-                    <input type="text" id="height" placeholder="Height(cm)" />
-                    <label htmlFor="management">Height: </label>
-                    <input type="text" id="management" placeholder="Management" />
-                    <label htmlFor="vaccination">Vaccination: </label>
-                    <select name="vac" id="vaccination"><option value="yes">Yes</option><option value="no">No</option></select>
-                    <label htmlFor="price"><h5>Asking Price</h5></label><br />
-                    <input type="text" id="price" placeholder="Enter Cattle Price" />
+                    <label htmlFor="height" className="a">Height: </label>
+                    <input type="text" id="height" placeholder="Enter Height(cm)" /><br />
+                    <label htmlFor="teeth" className="a">No. of Teeth: </label>
+                    <input type="text" id="teeth" placeholder="Number of Teeth" />
+                    <label htmlFor="vaccination" className="a">Vaccination: </label>
+                    <select name="vac" id="vaccination"><option value="yes">Yes</option><option value="no">No</option></select><br />
+                    <label htmlFor="price"className="a"><h4>Asking Price:</h4></label>
+                    <input type="text" id="price" placeholder="Enter Cattle Price" /><br />
+                    <div className="btn">
+                        <a href="" className="cancel">Cancel</a>
+                        <input type="submit" placeholder="Confirm" className="confirm"/>
+                    </div>
                 </form>
             </div>
         </div>
-        <a href="">Cancel</a>
-        <button onClick="">Confirm</button>
+        {/* <a href="">Cancel</a>
+        <button onClick="">Confirm</button> */}
         </div>
     )
 }

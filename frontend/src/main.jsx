@@ -6,7 +6,8 @@ import './index.css'
 import CreateAuction from './pages/CreateAuction';
 import AuctionCustomer from './pages/AuctionCustomer';
 import Dashboard from './pages/dashboard';
+import NewCattle from './pages/NewCattle'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<Dashboard/>);
+root.render(<NewCattle/>);
