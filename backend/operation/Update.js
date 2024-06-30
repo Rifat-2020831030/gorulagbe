@@ -30,12 +30,12 @@ const editProduct = async (req, res) => {
         {
             if(result.affectedRows > 0) {
                 res.status(200).json({
-                    status: 'success',
+                    status: '1',
                     message: 'Product updated successfully'
                 });
             } else {
                 res.status(400).json({
-                    status: 'fail',
+                    status: '0',
                     message: 'Failed to update product'
                 });
             }

@@ -6,7 +6,7 @@ const createProduct = async (req, res) => {
     const 
     {image, category, age, breed, weight, gender, color, height, food, 
     location, vaccination, price, discount, status} = req.body;
-
+ 
     const sql = `
     INSERT INTO cattle (image, category, age, breed, weight, gender, color, height, food, location, vaccination, price, discount, status)
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;

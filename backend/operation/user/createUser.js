@@ -8,8 +8,8 @@ const checkUserExists = async (table, email, mobile) => {
 };
 
 const createUser = async (req, res) => {    
-    const { email, mobile, district, password, role} = req.body;
-
+    let {username, email, mobile, district, password, role} = req.body;
+ 
     // check if the user already exists by email or mobile
     // user have to give unique email and mobile to create an account
     const userExistsInCustomers = await checkUserExists('customers', email, mobile);
@@ -37,13 +37,13 @@ const createUser = async (req, res) => {
     await db(sql, paramas)
     .then(result => 
     {
-        if(response.affectedRows > 0)
+        if(result.affectedRows > 0)
             res.status(200).json(
             {
                 status: '1',
                 message: 'User created successfully', 
                 token, 
-                user
+                id: result.insertId, 
             }
             );
         else
@@ -62,7 +62,7 @@ const createUser = async (req, res) => {
             message: 'User not created'
         }
         );
-        console.log(`Error in user creation: ${err}`);
+        console.log(`Error in user creation: ${err}`); 
     });
     
 }

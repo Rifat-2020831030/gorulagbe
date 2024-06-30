@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// middlewire
+const admin = require('../operation/authorizaion/admin');
+const seller = require('../operation/authorizaion/seller');
+const registered = require('../operation/authorizaion/registered');
+
 const user = require('../operation/user/user.main');
 const product = require('../operation/product/product.main');
 
@@ -17,31 +22,35 @@ const {GetById} = require('../operation/GetById');
 router.post('/register', user.createUser);
 router.post('/login', user.login);
 
-router.post('/addProduct', product.createProduct);
+router.post('/addProduct',seller, product.createProduct);
 router.get('/get/featured/:featured', product.featuredItems);
 
 // auction
-router.post('/addAuction', addAuction);
-router.get('/get/auction/:id', getAuction);
+router.post('/addAuction', seller, addAuction);
+router.get('/get/auction/:id', registered, getAuction); 
 
 // get by id
-router.get('/get/:tableName/:idField/:id', GetById);
+router.get('/get/:tableName/:idField/:id', registered, GetById);
+// get by category
+router.get('/search/:tableName', product.searchByCategory);
 
 // CRUD
 router.get('/get/:tableName', GET);
-router.patch('/update/:tableName/:idField/:id', Update);
-router.delete('/delete/:tableName/:idField/:id', Delete);
+router.patch('/update/:tableName/:idField/:id', registered, Update);
+router.delete('/delete/:tableName/:idField/:id', admin, Delete);
 
 module.exports = router;
-
+ 
 
 // Completed functionality
 // authentication
 // user(customer, seller, butcher, admin) creation : localhost:3000/register
 // user login : localhost:3000/login
+
 // product
 // product creation : localhost:3000/addProduct
 // get featured items : localhost:3000/get/featured/:featuredItems
+
 // generic operaitons
 // get all items : localhost:3000/get/:tableName
 // get element by id : localhost:3000/get/:tableName/:idField/:id
