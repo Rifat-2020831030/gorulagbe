@@ -1,0 +1,29 @@
+.index-wrapper ul li{
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid #00000039;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #000;
+}
+
+.index-wrapper ul li.active{
+    background-color: #00000039;
+}
+
+.index-wrapper ul li:hover{
+    background-color: #00000039;
+}
+
+.index-wrapper ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.index-wrapper {
+    display: flex;
+    justify-content: center;
+}

@@ -33,7 +33,7 @@ function App() {
         setHeroIndex={setHeroIndex}
       ></Hero>
       <div className="cattle-list-container">
-        <CattleList />
+        <CattleList api={"http://localhost:3000/get/featured/cattle"} showsubheading={true} />
       </div>
       <CategoryList />
       <LiveAuction startTime={"12-06-2024"} endTime={"14-06-2024"} info={""} />

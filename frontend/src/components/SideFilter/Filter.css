@@ -1,0 +1,45 @@
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  margin: 10px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust based on your layout */
+}
+
+.category-wrapper p {
+  margin-left: 20px;
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+
+.item-wrapper {
+  display: flex;
+}
+
+.category-item p {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.category-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.category-item label {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
