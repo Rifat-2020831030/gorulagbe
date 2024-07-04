@@ -1,160 +1,52 @@
-import { useState, useEffect } from "react";
 import "./Filter.css";
-import axios from "axios";
+import Input from "./Input";
 
-const initialCategoryState = {
-  breed: [],
-  color: [],
-  food: [],
-  gender: [],
-};
+const Filter = ({ setSection,setCategory, category}) => {
 
-const Filter = ({ cattleData, setCattleData, setSearchMsg }) => {
-
-  const [category, setCategory] = useState(initialCategoryState);
-
-  const handleCheckboxChange = (event, field, value) => {
-    const isChecked = event.target.checked;
-
-    setCategory((prevCategory) => {
-      const updatedField = isChecked
-        ? [...prevCategory[field], value]
-        : prevCategory[field].filter((item) => item !== value);
-
-      return {
-        ...prevCategory,
-        [field]: updatedField,
-      };
-    });
-
-    console.log(category);
-  };
-
-  function fetchData () {
-    const fetchFunction = async () => {
-      const response = await axios.post("http://localhost:3000/search/cattle", category);
-      console.log(response);
-      const status = response.data.status;
-      if(status === '1') {
-        const filteredData = response.data.data;
-        setSearchMsg('Search Result');
-        setCattleData(filteredData);
-        console.log('cattledata : ', cattleData)
-      }else {
-        setSearchMsg('No products found');
-        setCattleData([]);
-      }
-    }
-    fetchFunction();
-  }
 
   return (
     <div className="category-wrapper">
       <p>Filter</p> 
-      <button onClick={fetchData}>Filter</button>
+      {/* <button onClick={handleFilter}>Filter</button> */}
       <div className="category-container">
+        {/* stock */}
+      <div className="category-item">
+          <p>Stock</p>
+          <Input setCategory={setCategory} setSection={setSection} label={"Available"} field={"status"} value={"1"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Stock-out"} field={"status"} value={"0"}/>
+        </div>
+        {/* category section */}
+        <div className="category-item">
+          <p>Type</p>
+          <Input setCategory={setCategory} setSection={setSection} label={"Cow"} field={"category"} value={"cow"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Goat"} field={"category"} value={"goat"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Camel"} field={"category"} value={"camel"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Others"} field={"category"} value={"others"}/>
+        </div>
+        {/* breed section */}
         <div className="category-item">
           <p>Breed</p>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "breed", "Holstein")
-              }
-            />
-            <label>Holstein</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "breed", "Angus")
-              }
-            />
-            <label>Angus</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "breed", "Jersey")
-              }
-            />
-            <label>Jersey</label>
-          </div>
+          <Input setCategory={setCategory} setSection={setSection} label={"Shahiwal"} field={"breed"} value={"holstein"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Deshi"} field={"breed"} value={"deshi"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Jersey"} field={"breed"} value={"jersey"}/>
         </div>
         <div className="category-item">
           <p>Color</p>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "color", "black")
-              }
-            />
-            <label>Black</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) => handleCheckboxChange(event, "color", "red")}
-            />
-            <label>Red</label>
-          </div>
+          <Input setCategory={setCategory} setSection={setSection} label={"Black"} field={"color"} value={"black"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Red"} field={"color"} value={"red"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"White"} field={"color"} value={"white"}/>
         </div>
         <div className="category-item">
           <p>Food</p>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) => handleCheckboxChange(event, "food", "Grass")}
-            />
-            <label>Grass</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) => handleCheckboxChange(event, "food", "Hay")}
-            />
-            <label>Hay</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) => handleCheckboxChange(event, "food", "Grain")}
-            />
-            <label>Grain</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "food", "Mixed Feed")
-              }
-            />
-            <label>Mixed Feed</label>
-          </div>
+          <Input setCategory={setCategory} setSection={setSection} label={"Grass"} field={"food"} value={"grass"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Hay"} field={"food"} value={"hay"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Grain"} field={"food"} value={"grain"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Mixed Food"} field={"food"} value={"mixed feed"}/>
         </div>
         <div className="category-item">
           <p>gender</p>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "gender", "Male")
-              }
-            />
-            <label>Male</label>
-          </div>
-          <div className="item-wrapper">
-            <input
-              type="checkbox"
-              onChange={(event) =>
-                handleCheckboxChange(event, "gender", "Female")
-              }
-            />
-            <label>Female</label>
-          </div>
+          <Input setCategory={setCategory} setSection={setSection} label={"Male"} field={"gender"} value={"male"}/>
+          <Input setCategory={setCategory} setSection={setSection} label={"Female"} field={"gender"} value={"female"}/>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import Hero from "../components/hero/Hero";
 import LiveAuction from "../components/live-auction/LiveAuction";
 import Recipe from "../components/recipe/recipeList/RecipeList";
 
-function App() {
+const LandingPage = ()=> {
 
   let [heroIndex, setHeroIndex] = useState(0);
   let [isVisible, setIsVisible] = useState(false);
@@ -58,4 +58,4 @@ const offerImage = {
   cursor: "pointer",
 };
 
-export default App;
+export default LandingPage;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./PageIndex.css";
 
-const PageIndex = ({ totalPage, setOffset, offset }) => {
+const PageIndex = ({ totalPage, setOffset, offset,url, setUrl }) => {
   const [startIndex, setStartIndex] = useState(1);
   const [activeIndex, setActiveIndex] = useState(1);
-  console.log("offset: ", offset);
+
   // create a list of page numbers
   let pageNumber = [];
   pageNumber.push("<");
@@ -14,6 +14,35 @@ const PageIndex = ({ totalPage, setOffset, offset }) => {
   }
   pageNumber.push(">");
 
+  const handlePageClick = (page) => {
+    if (page === ">") {
+      if (activeIndex + 1 > totalPage) {
+        setActiveIndex(totalPage);
+      } 
+      else {
+        setActiveIndex(page + 1);
+      }
+    } else if (page === "<") {
+      if (activeIndex - 1 < 1) {
+        setActiveIndex(1);
+      } else {
+        setActiveIndex(page - 1);
+      }
+    } else {
+      setActiveIndex(activeIndex === page ? activeIndex : page);
+      console.log("page: ", page);
+      console.log("activeIndex: ", activeIndex);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    setOffset(page * 10 - 10);
+    console.log("offset: ", offset);
+    // setUrl(url => `${url}${activeIndex * 10 - 10}`);
+  }
+
+
   return (
     <div className="index-wrapper">
       <ul>
@@ -21,35 +50,7 @@ const PageIndex = ({ totalPage, setOffset, offset }) => {
           return (
             <li
               key={index}
-              onClick={() => {
-                if (page === ">") {
-                  if (activeIndex + 1 > totalPage) {
-                    setStartIndex(activeIndex);
-                  } 
-                  else if(startIndex + 5 > totalPage){
-                    setStartIndex(startIndex);
-                  }
-                  else {
-                    setStartIndex(startIndex + 1);
-                    setActiveIndex(startIndex + 1);
-                  }
-                } else if (page === "<") {
-                  if (activeIndex - 1 < 1) {
-                    setStartIndex(1);
-                    setActiveIndex(1);
-                  } else {
-                    setStartIndex(startIndex - 1);
-                    setActiveIndex(activeIndex - 1);
-                  }
-                } else {
-                  setActiveIndex(page);
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }
-                setOffset(activeIndex * 10 - 10);
-              }}
+              onClick={() => handlePageClick(page)}
               className={page === activeIndex ? "active" : ""}
             >
               {page}
