@@ -5,10 +5,13 @@ const searchByCategory = async (req, res) => {
     const {tableName} = req.params;
     let category = req.body;
 
+    const limit = req.params.limit;
+    const offset = req.params.offset;
+
     // category sample
     // category = {
     //     breed: ['Holstein', 'Jersey'],
-    //     color: ['Black', 'White'],
+    //     color: ['Black', 'White'], 
     //     size: ['Small', 'Medium'],
     //     age: ['Young', 'Old']
     // } 
@@ -32,7 +35,10 @@ const searchByCategory = async (req, res) => {
 
     sql += sqlArr.join(' AND ');
 
+    sql += ` LIMIT ${req.query.limit} OFFSET ${req.query.offset}`;
+ 
     console.log(sql);
+    // console.log('category: ', category); 
 
     const response = await db(sql)
     .then(result => {

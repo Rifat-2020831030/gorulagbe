@@ -32,7 +32,7 @@ router.get('/get/auction/:id', registered, getAuction);
 // get by id
 router.get('/get/:tableName/:idField/:id', registered, GetById);
 // get by category
-router.get('/search/:tableName', product.searchByCategory);
+router.post('/search/:tableName', product.searchByCategory);
 
 // CRUD
 router.get('/get/:tableName', GET);
