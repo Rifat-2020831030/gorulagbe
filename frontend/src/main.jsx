@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 // change the landingPage import to your new page
+
 import Router from "./routes/Routers";
 import CustomerFeed from "./pages/CustomerFeed";
 import LandingPage from "./pages/landingPage";
@@ -23,3 +24,4 @@ root.render(
     {/* <CustomerFeed /> */}
   </React.StrictMode>
 );
+
