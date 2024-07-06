@@ -1,9 +1,10 @@
 // router.js
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import LandingPage from '../pages/landingPage';
 import Dashboard from '../pages/dashboard';
 import ErrorPage from '../components/error/Error';
 import CustomerFeed from '../pages/CustomerFeed';
+import Details from '../pages/Details';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,15 @@ const router = createBrowserRouter([
   {
     path: "/customer-feed",
     element: <CustomerFeed />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/cattle-details/:id",
+    element: <Details />,
+  },
+  {
+    path: "/redirect",
+    element: <Navigate to="/details/3" />
   }
 ]);
 

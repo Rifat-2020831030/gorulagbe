@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "./CattleCard.css";
+import Details from "../../pages/Details";
 
 
 const CattleCard = ({ cattle , cow_image}) => {
+  const navigate = useNavigate();
   return (
-    <div className="cattle-card">
+    <div className="cattle-card" onClick = {() => navigate(`/cattle-details/${cattle.cattle_id}`,
+      {
+        state: cattle
+      }
+    ) }>
       <img src={cow_image} alt={cattle.name} className="cattle-image" />
       <div className="cattle-info">
         <div className="cattle-header">

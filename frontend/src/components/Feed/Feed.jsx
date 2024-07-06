@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import cow1 from "../../assets/cow1.jpg";
 import CattleCard from "../cattle-card/CattleCard";
 import "./Feed.css";
@@ -25,6 +26,7 @@ const Feed = ({cattleData}) => {
           key={cattle.cattle_id}
           cattle={cattle}
           cow_image={cow_images[0]}
+          // onClick = {<Navigate to="/" />}
         />
       ))}
     </div>
