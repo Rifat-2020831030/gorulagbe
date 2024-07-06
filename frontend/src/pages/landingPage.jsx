@@ -10,7 +10,7 @@ import Hero from "../components/hero/Hero";
 import LiveAuction from "../components/live-auction/LiveAuction";
 import Recipe from "../components/recipe/recipeList/RecipeList";
 
-function App() {
+const LandingPage = ()=> {
 
   let [heroIndex, setHeroIndex] = useState(0);
   let [isVisible, setIsVisible] = useState(false);
@@ -33,7 +33,7 @@ function App() {
         setHeroIndex={setHeroIndex}
       ></Hero>
       <div className="cattle-list-container">
-        <CattleList />
+        <CattleList api={"http://localhost:3000/get/featured/cattle"} showsubheading={true} />
       </div>
       <CategoryList />
       <LiveAuction startTime={"12-06-2024"} endTime={"14-06-2024"} info={""} />
@@ -58,4 +58,4 @@ const offerImage = {
   cursor: "pointer",
 };
 
-export default App;
+export default LandingPage;

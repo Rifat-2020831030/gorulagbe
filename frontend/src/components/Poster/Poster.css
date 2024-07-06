@@ -1,0 +1,7 @@
+.poster img {
+  width: 95%;
+  height: 200px;
+  object-fit: cover;
+  display: flex;
+  margin: 10px auto;
+}

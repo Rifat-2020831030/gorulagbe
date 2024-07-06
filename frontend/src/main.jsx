@@ -1,12 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 // change the landingPage import to your new page
-import Landingpage from './pages/landingPage';
-import './index.css'
-import CreateAuction from './pages/CreateAuction';
-import AuctionCustomer from './pages/AuctionCustomer';
-import Dashboard from './pages/dashboard';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import Router from "./routes/Routers";
+import CustomerFeed from "./pages/CustomerFeed";
+import LandingPage from "./pages/landingPage";
 
-root.render(<Dashboard/>);
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     {/* <Routering /> */}
+//     {/* <LandingPage /> */}
+//   </React.StrictMode>
+// )
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={Router} />
+    {/* <CustomerFeed /> */}
+  </React.StrictMode>
+);
+

@@ -25,18 +25,23 @@ const editProduct = async (req, res) => {
     const sql  = `UPDATE ${tableName} SET ${fields.join(', ')} WHERE ${idField} = ?`;
     values.push(id);
 
+    // console.log(sql);
+    // console.log(idField);
+    // console.log(updates); 
+
     const result = await db(sql, values)
     .then(result => 
         {
             if(result.affectedRows > 0) {
                 res.status(200).json({
-                    status: 'success',
+                    status: '1',
                     message: 'Product updated successfully'
                 });
             } else {
                 res.status(400).json({
-                    status: 'fail',
-                    message: 'Failed to update product'
+                    status: '0',
+                    message: 'Failed to update product',
+                    result
                 });
             }
         }

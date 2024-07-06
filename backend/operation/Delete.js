@@ -11,12 +11,12 @@ const Delete = async (req, res) => {
     { 
         if(result.affectedRows > 0) {
             res.json({
-                status: 'success',
+                status: '1',
                 message: 'Product deleted successfully'
             });
         } else {
             return {
-                status: 'fail',
+                status: '0',
                 message: 'Failed to delete product'
             };
         }
