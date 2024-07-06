@@ -25,6 +25,10 @@ const editProduct = async (req, res) => {
     const sql  = `UPDATE ${tableName} SET ${fields.join(', ')} WHERE ${idField} = ?`;
     values.push(id);
 
+    // console.log(sql);
+    // console.log(idField);
+    // console.log(updates); 
+
     const result = await db(sql, values)
     .then(result => 
         {
@@ -36,7 +40,8 @@ const editProduct = async (req, res) => {
             } else {
                 res.status(400).json({
                     status: '0',
-                    message: 'Failed to update product'
+                    message: 'Failed to update product',
+                    result
                 });
             }
         }

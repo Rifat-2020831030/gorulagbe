@@ -36,10 +36,10 @@ router.post('/search/:tableName', product.searchByCategory);
 
 // CRUD
 router.get('/get/:tableName', GET);
-router.patch('/update/:tableName/:idField/:id', registered, Update);
+router.patch('/update/:tableName/:idField/:id', Update);
 router.delete('/delete/:tableName/:idField/:id', admin, Delete);
 
-module.exports = router;
+module.exports = router; 
  
 
 // Completed functionality
