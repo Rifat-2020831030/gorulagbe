@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import loginImg from "../../assets/login.png";
 import "./Navbar.css";
 
-const Navbar = ({ setIsVisible, setPage }) => {
+const Navbar = ({setIsVisible, setPage }) => {
   const token = localStorage.getItem("token");
 
   const login = () => {
     setPage("login");
     setIsVisible(true);
+    console.log("login");
   };
 
   const register = () => {
@@ -25,12 +27,12 @@ const Navbar = ({ setIsVisible, setPage }) => {
       <div className="navbar">
         <h5>LOGO</h5>
         <div className="nav">
-          <a href="/">Home</a>
-          <a href="/customer-feed">Cattle</a>
-          <a href="#">Meat</a>
-          <a href="#">Butcher</a>
-          <a href="#">Recipee</a>
-          <a href="#footer" className="navbar-contact">
+          <a className="nav-item" href="/" >Home</a>
+          <a className="nav-item" href="/customer-feed" >Cattle</a>
+          <a className="nav-item" href="#" >Meat</a>
+          <a className="nav-item" href="#" >Butcher</a>
+          <a className="nav-item" href="#" >Recipee</a>
+          <a className="navbar-contact" href="#footer">
             Contact
           </a>
         </div>
@@ -54,16 +56,20 @@ const Navbar = ({ setIsVisible, setPage }) => {
           <div
             className="profile"
             style={{ display: token ? "block" : "none" }}
+            onClick={() => {
+              window.location.href = "/profile";
+            }}
           >
             <img src={loginImg} alt="Logged In" />
+            <h5>Profile</h5>
           </div>
           <button
-            className="button"
-            onClick={logout}
-            style={{ display: token ? "block" : "none" }}
-          >
-            Logout
-          </button>
+              className="button"
+              onClick={logout}
+              style={{ display: token ? "block" : "none" }}
+            >
+              Logout
+            </button>
         </div>
       </div>
     </>

@@ -13,8 +13,6 @@ import Recipe from "../components/recipe/recipeList/RecipeList";
 const LandingPage = ()=> {
 
   let [heroIndex, setHeroIndex] = useState(0);
-  let [isVisible, setIsVisible] = useState(false);
-  let [page, setPage] = useState("");
 
   useEffect(() => {
     setInterval(() => {
@@ -25,8 +23,8 @@ const LandingPage = ()=> {
   }, []);
 
   return (
-    <div className="main">
-      <Background heroIndex={heroIndex} setIsVisible={setIsVisible} setPage={setPage}></Background>
+    <div className="main" style={{margin:"0"}}>
+      <Background heroIndex={heroIndex} ></Background>
       {/* <Navbar></Navbar> */}
       <Hero
         heroIndex={heroIndex}
@@ -43,9 +41,7 @@ const LandingPage = ()=> {
       <Footer />
       
       {/* show the authentication page if isvisible is true */}
-      {isVisible && <AuthController page={page} setIsVisible={setIsVisible} />}
-
-      
+      {/* {isVisible && <AuthController page={page} setIsVisible={setIsVisible} />} */}
     </div>
   );
 }

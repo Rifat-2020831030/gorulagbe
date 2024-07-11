@@ -40,7 +40,7 @@ function CustomerFeed() {
       if(section === "feed") {
         response = await axios.get(
           `http://localhost:3000/get/cattle?limit=10&offset=`+offset
-        );
+        )
       } 
       else if (section === "filter") {
         response = await axios.post(
@@ -63,10 +63,10 @@ function CustomerFeed() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Poster />
       {/* <SearchBar setSearchTxt={setSearchTxt} performeSearch={performeSearch} /> */}
-      <center><h3>{searchMsg}</h3></center>
+      <center><h3 className="text-6xl my-8">{searchMsg}</h3></center>
       <div className="feed-wrapper" style={{ display: "flex" }}>
         <Filter
           setSection={setSection}
