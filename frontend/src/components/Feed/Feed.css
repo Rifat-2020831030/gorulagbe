@@ -1,0 +1,6 @@
+.cattle-feed {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}

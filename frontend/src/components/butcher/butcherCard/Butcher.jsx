@@ -1,17 +1,17 @@
 import React from "react";
 import "./Butcher.css";
 
-const Butcher = ({image, info}) => {
+const Butcher = ({image, butcher}) => {
   return (
     <>
       <div className="butcher-card">
-        <img className="butcher-image" src={image} alt={info.name} />
-        <h4>{info.name}</h4>
-        <div className="butcher-info">
-        <span className="available" style={{backgroundColor: "yellow", color: "black"}}>Location : {info.location}</span>
-        <span className="available">Rate : {info.rate}</span>
+        <img className="butcher-image" src={image} alt={butcher.username} />
+        <h4>{butcher.username}</h4>
+        <div className="butcher-butcher">
+        <span className="available" style={{backgroundColor: "yellow", color: "black"}}>Location : {butcher.district}</span>
+        <span className="available">Rate : {butcher.rate} <i>per cow</i></span>
         </div>
-        {/* <p>Rating : {info.rating}</p> */}
+        {/* <p>Rating : {butcher.rating}</p> */}
           <button className="details-button">See Details</button>
       </div>
     </>
@@ -20,7 +20,7 @@ const Butcher = ({image, info}) => {
 
 export default Butcher;
 
-// info
+// butcher
 // rate
 // image
 // name
