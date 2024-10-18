@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     height: 30%;
-    width: 70%;
+    width: 75%;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -18,45 +18,55 @@
 .with_image img{
     width: 220px;
     height: 125px;
-    margin-right: 80px;
+    margin-right: 50px;
     border-radius: 8px;
 }
 .without{
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: row;
-    background-color: lightgreen;
+    /* background-color:rgb(84, 58, 196); */
     border-radius: 8px;
+    margin-right: 10px;
     
 }
-.left{
+.left1{
     display: flex;
     flex-direction: column;
-    margin-right: 30%;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-right: 65px;
     margin-top: 10px ;
+    height: auto;
 }
-p{
+.p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     padding: 0;
     color: black;
 }
-.right{
+.right1{
     display: flex;
     flex-direction: column;
-    margin-top: 20px ;
+    padding: 20px;
+    margin-top: 10px ;
+    margin-left: 25px;
+    border: 2px solid black;
+    border-radius: 8px;
+    
 }
 
 .TK{
     font-size: large;
     font-weight: bolder;
+    color: black;
     
 }
 .id{
-    padding: 3px 40px ;
+    padding: 3px 50px ;
     text-align: center;
     outline: none;
-    margin: 0px 10px;
+    margin: 0px 20px;
     font-size: large;
     background-color: black;
     color: aliceblue;
@@ -66,17 +76,17 @@ a{
     text-decoration: none;
 
 }
-.SeeDetails{
+.Seedetails{
     text-decoration: none;
-    background-color: azure;
-    padding: 5px;
+    background-color: rgb(3, 159, 159);
+    padding: 3px 0px;
     font-weight: bolder;
     border-radius: 8px;
-    margin: 10px;
+    margin: 5px 19px ;
     font-size: large;
     color: black;
 }
-.SeeDetails:hover{
+.Seedetails:hover{
     text-decoration: none;
     background-color: rgb(6, 82, 149) ;
     color: white;

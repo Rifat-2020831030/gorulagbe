@@ -1,0 +1,31 @@
+.CA{
+    width: 768px;
+}
+.Customer h1{
+    position: absolute;
+    left: 400px;
+}
+.thefull{
+    display: flex;
+    flex-direction: row;
+}
+.aucleft{
+    display: grid;
+    margin: 40px 70px;
+    margin-bottom: 150px;
+    
+}
+.aucleft div:hover{
+    font-size: 15px;
+    cursor: pointer;
+}
+.vl1{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 70px;
+    height: auto;
+    border: 2px solid black;
+}
+.Auctions{
+    margin-top: 60px;
+}

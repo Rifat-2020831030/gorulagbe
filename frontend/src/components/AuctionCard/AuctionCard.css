@@ -1,0 +1,73 @@
+.CARD{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 4px;
+    margin: 40px;
+    width: 800px;
+    height: auto;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+.CARD h4{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 530px;
+    margin-left: 10px;
+}
+.Ongoing{
+    color: azure;
+    background-color: #059144;
+    padding: 12px;
+    border-radius: 8px;
+    position: absolute;
+    left: 700px;
+    bottom: 120px;
+    
+}
+.Ended{
+    color: azure;
+    background-color: rgb(193, 21, 21);
+    padding: 12px;
+    border-radius: 8px;
+    position: absolute;
+    left: 715px;
+    bottom: 120px;
+
+}
+.auc_name{
+    font-size: 20px;
+    padding: 20px;
+    margin-right: 250px;
+}
+.timer{
+    position: relative;
+    font-size: 20px;
+    left: 130px;
+
+}
+.timer00{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    padding-inline: 20px;
+    border-radius: 5px;
+}
+.NOC{
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 20px;
+    font-family: garamond;
+}
+.quantity{
+    font-weight: bolder;
+    font-size: 22px;
+}
+.ED{
+    font-size: 16px;
+    position: relative;
+    left:580px;
+    bottom: 30px;
+}

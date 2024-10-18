@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 // change the landingPage import to your new page
 import Landingpage from './pages/landingPage';
 import './index.css'
-import CreateAuction from './pages/CreateAuction';
-import AuctionCustomer from './pages/AuctionCustomer';
+import UserAuction from './pages/UserAuction';
+import CreateAuction from './pages/CreateAuction'
 import Dashboard from './pages/dashboard';
 import NewCattle from './pages/NewCattle'
 

@@ -1,8 +1,17 @@
-import React from "react";
-import Button from "../Button/Confirm"
+import React,{useState} from "react";
+import ImageUploader from "./AddPhotos";
 import "./NewC.css"
 const NewC = () => {
-    
+    const [formData, setFormData] = useState({
+        image: null,
+        otherField: ''
+      });
+      const handleImageUpload = (imageData) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          image: imageData
+        }));
+      };
     return(
         <div className="page">
         <h1>Add new Cattle</h1>
@@ -10,16 +19,16 @@ const NewC = () => {
             <div className="left">
                 <div className="thumbnail">
                         <h3>Thumbnail</h3>
-                        <div className="photo">+Add Photos</div>
+                        <ImageUploader handleImage={handleImageUpload}/>
                         <p>Set the cattle thumbnail image.Only *.png,*jpg,*jpeg are accepted</p>
                 </div>
                 <div className="discount">
                     <h4>Discount</h4>
                     <hr />
                     <div className="des">
-                    <span className="dis">Fixed Price</span>
-                    <span className="dis">7.5% off on Cellfin Payment</span>
-                    <span className="dis">9.5% off on membership on GoruLagbe</span>
+                    <span className="dis" tabIndex="1">Fixed Price</span>
+                    <span className="dis"tabIndex="2">7.5% off on Cellfin Payment</span>
+                    <span className="dis"tabIndex="3">9.5% off on membership on GoruLagbe</span>
                     </div>
                 </div>
             </div>
@@ -41,7 +50,7 @@ const NewC = () => {
                     <input type="text" id="breed" placeholder="Enter Breed" /><br />
                     <label htmlFor="gender" className="a">Gender: </label>
                     <input type="text" id="gender" placeholder="Enter Gender" />
-                    <label htmlFor="weight" className="a">Live Weight(approx:)</label>
+                    <label htmlFor="weight" className="a" >Live Weight(approx:)</label>
                     <input type="text" id="weight" placeholder="Enter Weight(kg)"/><br />
                     <label htmlFor="colour" className="a">Colour: </label>
                     <input type="text" id="colour" placeholder="Enter Colour" />
@@ -55,7 +64,7 @@ const NewC = () => {
                     <input type="text" id="price" placeholder="Enter Cattle Price" /><br />
                     <div className="btn">
                         <a href="" className="cancel">Cancel</a>
-                        <input type="submit" placeholder="Confirm" className="confirm"/>
+                        <input type="submit" value="Confirm" className="confirm"/>
                     </div>
                 </form>
             </div>

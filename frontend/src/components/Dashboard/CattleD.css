@@ -5,6 +5,8 @@
     border:1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    /* align-items: center; */
+    justify-content: center;
     width: 300px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,19 +19,42 @@ img{
     border-radius: 8px;
     margin-bottom: 15px;
 }
-
+.without_image1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
 .span1{
+    /* display: flex;
+    flex-direction: row; */
         margin-right: 20px;
+        
         
 }
 .buttons{
     margin: 17px;
 
 }
+.status{
+    background-color: rgb(18, 18, 46);
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    /* margin: 5px; */
+}
+.id1{
+    background-color: rgb(54, 121, 98);
+    color: black;
+    padding: 4px;
+    font-weight: bolder;
+    border-radius: 5px;
+}
 .SeeDetails1{
     text-decoration: none;
     background-color: black;
-    padding: 5px;
+    padding: 10px;
     font-weight: bolder;
     border-radius: 8px;
     margin-right: 20px;
@@ -45,7 +70,7 @@ img{
 .Boost{
     text-decoration: none;
     background-color: black;
-    padding: 5px;
+    padding: 10px;
     font-weight: bolder;
     border-radius: 8px;
     font-size: large;

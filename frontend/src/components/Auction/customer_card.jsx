@@ -7,7 +7,7 @@ const Customer_card = ({cattle, cattle_image}) => {
             <span>Code:</span>
             <span>{cattle.id}</span>
             <span>Asking Price</span>
-            <span>{cattle.price}</span>
+            <span>tk {cattle.price}</span>
             <button onClick="">BID</button>
             
         </div>

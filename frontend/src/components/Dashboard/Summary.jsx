@@ -8,21 +8,21 @@ import cow3 from "../../assets/cow3.jpg";
 
 const cattles =
 [{
-    id: "GLR 4755",
+    id: "GLR_4755",
     name: "Male - Bull",
     image: {cow1},
     status: "Unsold",
     price: 80000
 },
 {
-    id: "GLR 3253",
+    id: "GLR_3253",
     name: "Male - Bull",
     status: "Sold",
     image: {cow2},
     price: 125000
 },
 {
-    id: "GLR 1931",
+    id: "GLR_1931",
     name: "Male - Bull",
     status: "Unsold",
     image: {cow3},
@@ -33,10 +33,11 @@ const cattles =
 const Summary = () => {
     const cattle_image= [cow1,cow2,cow3];
     return (
+        <>
+        <h1 className="Headline">Dashboard</h1>
         <div className="full">
-            
         <div className="lefty">
-        <h1>Dashboard</h1>
+        
             <a href="" className="profile">Your Profile</a>
             <a href="" className="pc">Your Posted Cattle</a>
             <a href="" className="auc">Your Auction</a>
@@ -45,6 +46,7 @@ const Summary = () => {
         <div className="vl"></div>
         <div className="righty">
          <div className="Boxes">
+            <div className="New"><a href="" className="New1">Add New Cattle</a></div>
             <div className="Statistics">
                 <span className="number1">Cattle Statistics</span> <br />
                 <span className="number">54</span> <br />
@@ -52,10 +54,10 @@ const Summary = () => {
             </div>
             <div className="auction">
                 
-                <span className="auc1"><h3>Auction</h3><h4>Total Auction :</h4> 11
-                <h4>Recent Auction: </h4> 5</span>
-                <span className="auc2"><h4>Auction Ended :</h4> 6
-                <h4>Total Sales: </h4>105k</span>
+                <span className="auc1"><h3>Auction</h3><h5>Total Auction :</h5><h4>11</h4> 
+                <h5>Recent Auction: </h5><h4>5</h4> </span>
+                <span className="auc2"><h5>Auction Ended:</h5> <h4>6</h4>
+                <h5>Total Sales: </h5><h4>105k</h4></span>
             </div>
         </div>
         <div className="live">
@@ -76,7 +78,7 @@ const Summary = () => {
         </div>
         </div>
         </div>
-
+        </>
     )
 }
 

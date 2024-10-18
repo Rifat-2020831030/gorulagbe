@@ -37,7 +37,7 @@ h2{
     border-radius: 8px;
     margin-bottom: 85px;
 }
-.photo{
+/* .photo{
     display: flex;
     background-color: lightslategrey;
     border-radius: 5px;
@@ -47,7 +47,7 @@ h2{
     font-size: large;
     margin: 50px;
     height: 200px;
-}
+} */
 p{
     color: grey;
     text-align: center;
@@ -78,6 +78,18 @@ p{
     padding: 55px;
     margin: 15px;
     height: 40px;
+    cursor: pointer;
+}
+.dis:hover{
+    color: azure;
+    background-color: rgba(11, 11, 59, 0.767);
+    font-size: large;
+}
+.dis:focus{
+    background-color: rgba(30, 92, 178, 0.767);
+    color: black;
+    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.7);
+    font-size: large;
 }
 .right{
         display: flex;
@@ -95,34 +107,40 @@ p{
 
 #form{
     padding: 10px;
+    background-color: #f6f6f6;
     font-size: larger;
     /* margin: 100px; */
     line-height: 6;
 }
 .category{
-    font-size: 20px;
-    margin-right: 30px;
+    
+    margin-right: 17px;
+    margin-left: 15px;
 }
 #category{
     width: 90px;
 }
 .a{
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 15px;
 }
 input, select{
-    border-radius: 5px;
-    border: 3px solid lightgrey;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);;
+    border-radius: 10px;
+    border: 3px solid grey;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
 #age{
+   
     text-align: center;
     height: 40px;
-    margin-right: 90px;
+    margin-left: 45px;
+    margin-right: 50px;
 }
 #breed{
     text-align: center;
     height: 40px;
-    width: 350px;
+    width: 280px;
+    margin-left: 120px;
 }
 #weight{
     text-align: center;
@@ -135,28 +153,34 @@ input, select{
     text-align: center;
     height: 40px;
     width: 200px;
-    margin-right: 20px;
+    margin-right: 56px;
+    margin-left: 20px;
    
 }
+
 #colour{
     text-align: center;
     height: 40px;
     width: 200px;
-    margin-right: 71px;
+    margin-right: 60px;
+    margin-left: 25px;
 }
 #height{
     text-align: center;
     height: 40px;
-    width: 340px;
+    width: 280px;
+    margin-left: 100px;
 }
 #teeth{
     text-align: center;
     height: 40px;
     width: 180px;
-    margin-right: 90px;
+    margin-right: 65px;
 }
 #vaccination{
     width: 90px;
+    height: 40px;
+    margin-left: 60px;
 }
 h4{
     font-size: 25px;
@@ -187,6 +211,7 @@ h4{
     height: 60px;
     width: 350px;
     border-radius: 10px;
+    margin-left: 45px;
 }
 .cancel:hover{
     text-decoration: none;
@@ -202,6 +227,7 @@ h4{
     margin: 10px;
     background-color: black;
     color: #ddd;
+    border:2px solid black;
     font-size: 20px;
     height: 60px;
     width: 350px;
@@ -209,8 +235,12 @@ h4{
 }
 .confirm:hover{
     background-color: rgb(81, 81, 243);
+    border: 2px solid black;
     color: black;
     font-size: 25px;
     transition-duration: 0.7s;
 
+}
+input:active,select:active{
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
 }
