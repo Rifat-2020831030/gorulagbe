@@ -5,31 +5,45 @@ import Dashboard from '../pages/dashboard';
 import ErrorPage from '../components/error/Error';
 import CustomerFeed from '../pages/CustomerFeed';
 import Details from '../pages/Details';
+import Navbar from '../components/navbar/Navbar';
+import AuthController from '../components/auth/Auth';
+import Layout from '../pages/Layout';
+import Checkout from '../components/Checkout/Checkout';
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <Layout><LandingPage /></Layout>,
     exact: true,
     errorElement: <ErrorPage />
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <Layout><Dashboard /></Layout>,
     errorElement: <ErrorPage />,
   },
   {
     path: "/customer-feed",
-    element: <CustomerFeed />,
+    element: <Layout><CustomerFeed /></Layout>,
     errorElement: <ErrorPage />,
   },
   {
     path: "/cattle-details/:id",
-    element: <Details />,
+    element: <Layout><Details /></Layout>,
   },
   {
-    path: "/redirect",
-    element: <Navigate to="/details/3" />
+    path: "/",
+    element: <Navigate to="/customer-feed" />
+  },
+  {
+    path: "/profile",
+    element: <Navigate to="/dashboard" />
+  },
+  {
+    path: "/checkout",
+    element: <Layout><Checkout /></Layout>,
   }
 ]);
 

@@ -1,12 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import cowimg from "../assets/cow1.jpg";
+import BlinkingBox from "../components/BlinkingBox/BlinkingBox";
 import CattleList from "../components/cattle-list/CattleList";
 import Footer from "../components/footer/Footer";
-import BlinkingBox from "../components/BlinkingBox/BlinkingBox";
 import Navbar from "../components/navbar/Navbar";
 import "./pages-css/Details.css";
+import Login from "../components/auth/Auth";
+
+
+import { Breadcrumb, BreadcrumbItem } from "keep-react";
+import { CaretRight } from "phosphor-react";
 
 const Details = () => {
   const location = useLocation();
@@ -16,45 +21,85 @@ const Details = () => {
   const [color, setColor] = useState("rgb(255, 242, 0)");
   const liveWeightColor = ["red", "white"];
   const [index, setIndex] = useState(0);
+  const [cart, setCart] = useState([]);
+  let cartList = [];
 
   //update view count
   useState(async () => {
-    window.scrollTo(top)
+    window.scrollTo(top);
     const viw = data.view_count + 1;
     console.log(data.cattle_id);
     const response = await axios.patch(
-        `http://localhost:3000/update/cattle/cattle_id/${data.cattle_id}`,
-        {view_count: viw}
-      );
+      `http://localhost:3000/update/cattle/cattle_id/${data.cattle_id}`,
+      { view_count: viw }
+    );
     console.log(response);
   }, []);
 
   useEffect(() => {
     setInterval(() => {
-        setColor((color) => {
-            (color)==="red"?"yellow":"red" 
-        });
+      setColor((color) => {
+        color === "red" ? "yellow" : "red";
+      });
     }, 2000);
-  },[]);
+  }, []);
+
+  function buyNow() {
+    window.location.href = "/checkout";
+  }
+
+  function handleAddToCart() {
+    // if(localStorage.getItem("token") === null) {
+    //   alert("Please login first");
+    //   return <Login />
+    // }
+    cartList.push(data);
+    //add to cart
+    console.log(cartList.length);
+    setCart(cart => [...cart, cartList[0]]);
+    alert("Added to cart");
+    // store in local storage
+    localStorage.setItem("cart", JSON.stringify(cartList));
+  }
 
   return (
     <>
-      <Navbar />
+      <Breadcrumb>
+        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>Overview</BreadcrumbItem>
+        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+          <CaretRight size={18} color="#455468" />
+          Home
+        </BreadcrumbItem>
+        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+          <CaretRight size={18} color="#455468" />
+          Cattle-Feed
+        </BreadcrumbItem>
+        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+          <CaretRight size={18} color="#455468" />
+          Cattle
+        </BreadcrumbItem>
+      </Breadcrumb>
       <div className="details-wrapper">
         <img src={cowimg} alt="" className="details-image" />
         <div className="details-description">
           <p className="des-heading">
             A {data.category} from <span>{data.location}</span> is Up for sale
           </p>
-          <i>Total viewed by : {data.view_count+1}</i>
-          <li style={{listStyle:"none"}}>
-            <span className="des-sub-heading" >Live Weight :</span>
-            <BlinkingBox color={"red"} data={data.weight} unit={"kg"}/>
+          <i>Total viewed by : {data.view_count + 1}</i>
+          <li style={{ listStyle: "none" }}>
+            <span className="des-sub-heading">Live Weight :</span>
+            <BlinkingBox color={"red"} data={data.weight} unit={"kg"} />
           </li>
           {/* called to action */}
           <div className="des-button">
-            {data.status?<button>Buy Now</button>:<BlinkingBox data={"stock out"} />}
-            <button>Add to Cart +</button>
+            {data.status ? (
+              <button onClick={buyNow}>Buy Now</button>
+            ) : (
+              <BlinkingBox data={"stock out"} />
+            )}
+                <button onClick={handleAddToCart}>Add to Cart</button>
+              
+            
           </div>
           {/* description */}
           <p className="description-p">Description</p>
@@ -106,4 +151,3 @@ const Details = () => {
 };
 
 export default Details;
-

@@ -5,13 +5,17 @@
   align-items: center;
   padding: 20px 50px;
   background-color: lightcoral;
-  height: 5vh;
+  height: 8vh;
 }
 
 .nav a {
   text-decoration: none;
   color: black;
   padding-right: 40px;
+}
+
+.nav-item:hover {
+  color: white;
 }
 
 .navbar-contact {
@@ -44,6 +48,23 @@
   margin-right: 10px;
 }
 
+.nav2 button:hover{
+  background-color: white;
+  color: black;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.profile h5{
+  margin: 0;
+}
+
 .profile img{
   width: 40px;
   height: 40px;
@@ -52,3 +73,7 @@
   object-fit: cover;
   color: aliceblue;
 }
+
+
+
+

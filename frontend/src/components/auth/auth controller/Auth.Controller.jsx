@@ -19,11 +19,8 @@ const AuthController = ({ page, setIsVisible }) => {
 
   return (
     <>
-      <div
-        className="auth-container"
-      >
-        <Auth page={page} setToken={setToken} setIsVisible={setIsVisible}/>
-      </div>
+      {/* render auth page if there is no token otherwise dont render anything */}
+      (getToken() ? null : <Auth page={page} setIsVisible={setIsVisible} />)
     </>
   );
 };
