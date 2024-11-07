@@ -13,7 +13,7 @@ const Background = ({ heroIndex , setIsVisible, setPage}) => {
 
   return (
     <>
-      <Navbar setIsVisible={setIsVisible} setPage={setPage}></Navbar>
+      {/* <Navbar setIsVisible={setIsVisible} setPage={setPage}></Navbar> */}
       <div className="background">
         <img className="background fade-in" src={bgImage} alt="Background" />
       </div>

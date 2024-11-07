@@ -22,7 +22,7 @@ const {GetById} = require('../operation/GetById');
 router.post('/register', user.createUser);
 router.post('/login', user.login);
 
-router.post('/addProduct',seller, product.createProduct);
+router.post('/addProduct/:id', product.createProduct);
 router.get('/get/featured/:featured', product.featuredItems);
 
 // auction
