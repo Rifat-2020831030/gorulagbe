@@ -101,7 +101,7 @@ const Auction_cattle = ()=>{
                     <h2 className="h2">ADD CATTLE</h2>
                     <div className="Add_cattle"> 
                    {cattle_info.map((cattle,index)=>(
-                    <Cattle_Card key={cattle.id } cattle={cattle} cattleimage = {cattle_image[0]}/>
+                    <Cattle_Card key={cattle.id} cattle={cattle} cattleimage = {cattle_image[0]}/>
                    ))}</div>
                   
                 </form>

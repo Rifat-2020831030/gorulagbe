@@ -1,7 +1,9 @@
+import axios from "axios";
 import React from "react";
+// import { useNavigate } from 'react-router-dom';
 import AuctionCard from "../AuctionCard/AuctionCard";
 import "./CustomerAuction.css";
-const auctioninfo =
+export const auctioninfo =
 [{
     auction_id : 13434,
     auction_name: "The COWS",
@@ -23,7 +25,13 @@ const auctioninfo =
 }
 ]
 const CustomerAuction = () =>
-{
+{   
+    // const navigate = useNavigate();
+    const handleAuctionClick = (auctionId) => {
+        console.log(`Auction with ID ${auctionId} was clicked.`);
+        // navigate(`/auction/${auctionId}`);
+    };
+
     return(
         <div className="Customer">
         <h1>Auctions</h1>
@@ -32,10 +40,11 @@ const CustomerAuction = () =>
         <div className="vl1"></div>
         <div className="Auctions">
             {auctioninfo.map((auction,index)=>(
-            <AuctionCard key={auction.auction_id}  auction = {auction}/>))}</div>
+            <AuctionCard key={auction.auction_id}  auction = {auction} onClick={()=> handleAuctionClick(auction.auction_id)}/>))}</div>
         </div>
         </div>
     )
  }
+ 
  export default CustomerAuction;
   

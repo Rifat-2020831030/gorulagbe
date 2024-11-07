@@ -11,6 +11,10 @@
     position: relative;
     cursor: pointer;
 }
+.CARD:hover{
+    border: navy;
+    box-shadow: 0 7px 12px rgba(0, 0, 0, 0.4);
+}
 .CARD h4{
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
