@@ -1,11 +1,13 @@
 .CARD{
+    display: flex;
+    justify-content: space-between;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 4px;
-    margin: 40px;
-    width: 800px;
-    height: auto;
+    padding: 20px;
+    margin: 20px;
+    width: 900px;
+    height: 200px;
     
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -18,28 +20,37 @@
 .CARD h4{
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-right: 530px;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}
+
+.righty{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-end;
 }
 .Ongoing{
+    
     color: azure;
     background-color: #059144;
-    padding: 12px;
+    padding: 16px;
+    font-size: 15px;
     border-radius: 8px;
-    position: absolute;
-    left: 700px;
-    bottom: 120px;
+    margin-bottom: 20px;
+
     
 }
 .Ended{
     color: azure;
     background-color: rgb(193, 21, 21);
-    padding: 12px;
+    padding: 16px;
+    font-size: 15px;
     border-radius: 8px;
-    position: absolute;
-    left: 715px;
-    bottom: 120px;
+    margin-bottom: 20px;
 
+ 
 }
 .auc_name{
     font-size: 20px;
@@ -47,9 +58,8 @@
     margin-right: 250px;
 }
 .timer{
-    position: relative;
     font-size: 20px;
-    left: 130px;
+    top: 30px;
 
 }
 .timer00{
@@ -63,7 +73,7 @@
     font-size: 18px;
     font-weight: bolder;
     margin-left: 20px;
-    font-family: garamond;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .quantity{
     font-weight: bolder;
@@ -71,7 +81,5 @@
 }
 .ED{
     font-size: 16px;
-    position: relative;
-    left:580px;
     bottom: 30px;
 }

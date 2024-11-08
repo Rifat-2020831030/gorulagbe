@@ -9,6 +9,9 @@ import Navbar from '../components/navbar/Navbar';
 import AuthController from '../components/auth/Auth';
 import Layout from '../pages/Layout';
 import Checkout from '../components/Checkout/Checkout';
+import AuctionDetails from '../pages/UserAuction2';
+import UserAuction from '../pages/UserAuction';
+
 
 
 
@@ -42,9 +45,20 @@ const router = createBrowserRouter([
     element: <Navigate to="/dashboard" />
   },
   {
+    path: "/auction",
+    element: <UserAuction/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/auction/:auction_id",
+    element: <AuctionDetails/>,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/checkout",
     element: <Layout><Checkout /></Layout>,
   }
 ]);
 
 export default router;
+

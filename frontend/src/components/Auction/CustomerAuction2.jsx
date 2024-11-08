@@ -42,27 +42,41 @@ const element =
 
 const CustomerAuction2 = () =>
 {
-    const { auctionId } = useParams();  // Extract auctionId from URL
+    // const { auctionId } = useParams();  
+    const { auction_id } = useParams();
 
-    const auction = auctioninfo.find(a => a.auction_id === parseInt(auctionId));
+    const auction = auctioninfo.find(a => a.auction_id === parseInt(auction_id));
+    if (!auction) {
+        return <p>Auction not found.</p>; 
+      }
     
     const cattle_image= [cow1,cow2,cow3,cow3];
     return(
         <div className="Customer2">
-        <span className="aucname">Auction Name: {auction.auction_name}</span>
-        <span className="timer">Time Remaining: 00:00:00</span>    
-        <div className="thefull">
-          <div className="aucleft"><div>Your profile</div><div>Store</div><div>Settings</div><div>Notifications</div><div>Subscriptions</div></div>
-        <div className="vl1"></div>
+            <div className="thefull">
+            <div className="sidebar">
+                <div className="sidebar-item">Your Profile</div>
+                <div className="sidebar-item">Store</div>
+                <div className="sidebar-item">Settings</div>
+                <div className="sidebar-item">Notifications</div>
+                <div className="sidebar-item">Subscriptions</div>
+            </div>
+                {/* <div className="vl1"></div> */}
+                <div>
+                    <div className="banner">
+                        <span className="aucname">Auction Name: {auction.auction_name}</span>
+                        <span className="enddate">End Date: {auction.edate}</span>  
+                        <span className="timer">Time Remaining: 00:00:00</span>  
+                    </div>
+                    <div className="Cattles">
+                        {element.map((cattle,index)=>(
+                                <Customer_card key={element.id}  cattle = {cattle} cattle_image={cattle_image[0]} />))}
 
-        
-        <div className="Cattles">
-            {element.map((cattle,index)=>(
-                <Customer_card key={element.id}  cattle = {cattle} cattle_image={cattle_image[0]} />))}
+                    </div>
+                </div>
 
-        </div>
-        </div>
-        </div>
+            </div>
+    </div>
     )
 }
 export default CustomerAuction2;

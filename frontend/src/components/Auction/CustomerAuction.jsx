@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-// import { useNavigate } from 'react-router-dom';
+
 import AuctionCard from "../AuctionCard/AuctionCard";
 import "./CustomerAuction.css";
 export const auctioninfo =
@@ -26,11 +26,8 @@ export const auctioninfo =
 ]
 const CustomerAuction = () =>
 {   
-    // const navigate = useNavigate();
-    const handleAuctionClick = (auctionId) => {
-        console.log(`Auction with ID ${auctionId} was clicked.`);
-        // navigate(`/auction/${auctionId}`);
-    };
+    
+    
 
     return(
         <div className="Customer">
@@ -40,7 +37,7 @@ const CustomerAuction = () =>
         <div className="vl1"></div>
         <div className="Auctions">
             {auctioninfo.map((auction,index)=>(
-            <AuctionCard key={auction.auction_id}  auction = {auction} onClick={()=> handleAuctionClick(auction.auction_id)}/>))}</div>
+            <AuctionCard key={auction.auction_id}  auction = {auction} />))}</div>
         </div>
         </div>
     )
