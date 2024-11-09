@@ -1,0 +1,75 @@
+.whole1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  /* position: relative; */
+}
+img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.span1 {
+  margin-right: 20px;
+}
+.span2 {
+  font-size: 20px;
+  padding: 5px;
+}
+.buttons {
+  margin: 17px;
+}
+.status {
+  background-color: rgb(18, 18, 46);
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  /* margin: 5px; */
+}
+.id1 {
+  background-color: rgb(54, 121, 98);
+  color: black;
+  padding: 4px;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+.SeeDetails1 {
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  font-weight: bolder;
+  border-radius: 8px;
+  margin-right: 20px;
+  font-size: large;
+  color: azure;
+}
+.SeeDetails1:hover {
+  text-decoration: none;
+  background-color: rgb(92, 240, 89, 1);
+  color: black;
+}
+.Boost {
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  font-weight: bolder;
+  border-radius: 8px;
+  font-size: large;
+  color: azure;
+}
+.Boost:hover {
+  text-decoration: none;
+  background-color: rgb(92, 240, 89, 1);
+  color: black;
+}
