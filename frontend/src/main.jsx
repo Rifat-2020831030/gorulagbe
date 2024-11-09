@@ -6,18 +6,19 @@ import "./index.css";
 
 import Router from "./routes/Routers";
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
+// ReactDOM.createRoot(document.getElementById('root'))
+// .render(
 //   <React.StrictMode>
 //     {/* <Routering /> */}
 //     {/* <LandingPage /> */}
 //   </React.StrictMode>
-// )
-
+// );
+    
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <React.StrictMode>
         <RouterProvider router={Router} />
     {/* <CustomerFeed /> */}
-    </React.StrictMode>
+  </React.StrictMode>
 );

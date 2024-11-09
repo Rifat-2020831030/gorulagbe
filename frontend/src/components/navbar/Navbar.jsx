@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import loginImg from "../../assets/login.png";
+import React from "react";
+import loginImg from "../../assets/man.png";
+import Cart from "./Cart";
 import "./Navbar.css";
 
-const Navbar = ({setIsVisible, setPage }) => {
+const Navbar = ({ setIsVisible, setPage, cart }) => {
+  const productCount = 3;
   const token = localStorage.getItem("token");
 
   const login = () => {
@@ -27,11 +28,21 @@ const Navbar = ({setIsVisible, setPage }) => {
       <div className="navbar">
         <h5>LOGO</h5>
         <div className="nav">
-          <a className="nav-item" href="/" >Home</a>
-          <a className="nav-item" href="/customer-feed" >Cattle</a>
-          <a className="nav-item" href="#" >Meat</a>
-          <a className="nav-item" href="#" >Butcher</a>
-          <a className="nav-item" href="#" >Recipee</a>
+          <a className="nav-item" href="/">
+            Home
+          </a>
+          <a className="nav-item" href="/customer-feed">
+            Cattle
+          </a>
+          <a className="nav-item" href="#">
+            Meat
+          </a>
+          <a className="nav-item" href="#">
+            Butcher
+          </a>
+          <a className="nav-item" href="#">
+            Recipee
+          </a>
           <a className="navbar-contact" href="#footer">
             Contact
           </a>
@@ -53,6 +64,7 @@ const Navbar = ({setIsVisible, setPage }) => {
             Register
           </button>
           {/* show if the user is login */}
+          <Cart cart={cart} />
           <div
             className="profile"
             style={{ display: token ? "block" : "none" }}
@@ -64,12 +76,12 @@ const Navbar = ({setIsVisible, setPage }) => {
             <h5>Profile</h5>
           </div>
           <button
-              className="button"
-              onClick={logout}
-              style={{ display: token ? "block" : "none" }}
-            >
-              Logout
-            </button>
+            className="button"
+            onClick={logout}
+            style={{ display: token ? "block" : "none" }}
+          >
+            Logout
+          </button>
         </div>
       </div>
     </>

@@ -44,7 +44,7 @@ function CustomerFeed() {
       } 
       else if (section === "filter") {
         response = await axios.post(
-          `http://localhost:3000/search/cattle?limit=10&offset=`+offset,
+          `http://localhost:3000/search/cattle?isFilter=1&limit=10&offset=`+offset,
           category
         );
       }

@@ -9,7 +9,7 @@ const initialCategoryState = {
 };
 
 const Input = ({setSection, setCategory, label, field, value}) => {
-    const handleCheckboxChange = (event, field, value) => {
+    const handleCheckboxChange = (event, field, value) => {     
         const isChecked = event.target.checked;
         setSection('filter');
         setCategory((prevCategory) => {
@@ -24,7 +24,7 @@ const Input = ({setSection, setCategory, label, field, value}) => {
         });
         // handleFilter();
         // console.log(category);
-      };
+    };
 
       return (
         <div className="item-wrapper">

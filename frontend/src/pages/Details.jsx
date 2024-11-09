@@ -1,19 +1,16 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import cowimg from "../assets/cow1.jpg";
 import BlinkingBox from "../components/BlinkingBox/BlinkingBox";
 import CattleList from "../components/cattle-list/CattleList";
 import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/Navbar";
 import "./pages-css/Details.css";
-import Login from "../components/auth/Auth";
-
 
 import { Breadcrumb, BreadcrumbItem } from "keep-react";
 import { CaretRight } from "phosphor-react";
 
-const Details = () => {
+const Details = ({ setPage, setIsVisible, setCart, isVisible }) => {
   const location = useLocation();
   const data = location.state;
 
@@ -21,14 +18,13 @@ const Details = () => {
   const [color, setColor] = useState("rgb(255, 242, 0)");
   const liveWeightColor = ["red", "white"];
   const [index, setIndex] = useState(0);
-  const [cart, setCart] = useState([]);
   let cartList = [];
 
   //update view count
   useState(async () => {
     window.scrollTo(top);
     const viw = data.view_count + 1;
-    console.log(data.cattle_id);
+    console.log("data object in details: ",data);
     const response = await axios.patch(
       `http://localhost:3000/update/cattle/cattle_id/${data.cattle_id}`,
       { view_count: viw }
@@ -42,39 +38,58 @@ const Details = () => {
         color === "red" ? "yellow" : "red";
       });
     }, 2000);
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
   }, []);
 
   function buyNow() {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      alert("Please login first");
+      setPage("login");
+      setIsVisible(true);
+      console.log("is visible: ",isVisible);
+    }
     window.location.href = "/checkout";
   }
 
-  function handleAddToCart() {
-    // if(localStorage.getItem("token") === null) {
-    //   alert("Please login first");
-    //   return <Login />
-    // }
-    cartList.push(data);
-    //add to cart
-    console.log(cartList.length);
-    setCart(cart => [...cart, cartList[0]]);
-    alert("Added to cart");
-    // store in local storage
-    localStorage.setItem("cart", JSON.stringify(cartList));
+  function handleAddToCart(command) {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      alert("Please login first");
+      setPage("login");
+      setIsVisible(true);
+    } else if(command==="add"){
+      cartList = JSON.parse(localStorage.getItem("cart")) || [];
+      cartList.push(data.cattle_id);
+      localStorage.setItem("cart", JSON.stringify(cartList));
+      setCart(cartList);
+      console.log(cartList);
+    } else if(command==="remove"){
+      cartList = JSON.parse(localStorage.getItem("cart")) || [];
+      cartList = cartList.filter((id) => id !== data.cattle_id);
+      localStorage.setItem("cart", JSON.stringify(cartList));
+      setCart(cartList);
+      console.log(cartList);
+    }
   }
 
   return (
     <>
       <Breadcrumb>
-        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>Overview</BreadcrumbItem>
-        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+        <BreadcrumbItem style={{ color: "black", fontSize: "16px" }}>
+          Overview
+        </BreadcrumbItem>
+        <BreadcrumbItem style={{ color: "black", fontSize: "16px" }}>
           <CaretRight size={18} color="#455468" />
           Home
         </BreadcrumbItem>
-        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+        <BreadcrumbItem style={{ color: "black", fontSize: "16px" }}>
           <CaretRight size={18} color="#455468" />
           Cattle-Feed
         </BreadcrumbItem>
-        <BreadcrumbItem style={{color:"black", fontSize:"16px"}}>
+        <BreadcrumbItem style={{ color: "black", fontSize: "16px" }}>
           <CaretRight size={18} color="#455468" />
           Cattle
         </BreadcrumbItem>
@@ -97,8 +112,16 @@ const Details = () => {
             ) : (
               <BlinkingBox data={"stock out"} />
             )}
-                <button onClick={handleAddToCart}>Add to Cart</button>
-              
+            {/* show add to cart when data.status is true otherwise s=dont show it , also check the product is in the cart or not*/}
+            {data.status && (
+              (JSON.parse(localStorage.getItem("cart")) || []).includes(data.cattle_id) ? (
+                <button onClick={() => handleAddToCart("remove")}>Remove from Cart</button>
+              ) : (
+                <button onClick={() => handleAddToCart("add")}>Add to Cart</button>
+              )
+            )}
+            
+            {/* {data.status && (<button onClick={() => {handleAddToCart("remove")}}>Remove from Cart</button>)} */}
             
           </div>
           {/* description */}

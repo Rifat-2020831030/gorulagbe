@@ -24,6 +24,8 @@ const Auth = ({ page, setToken, setIsVisible }) => {
           setToken(token);
           localStorage.setItem("token", token);
           console.log(data);
+          window.location.reload();
+
         } else {
           alert(message);
         }
@@ -44,6 +46,8 @@ const Auth = ({ page, setToken, setIsVisible }) => {
           setToken(data.token);
           localStorage.setItem("token", data.token);
           console.log(data);
+          window.location.reload();
+
         } else {
           alert(data.message);
         }

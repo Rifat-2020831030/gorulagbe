@@ -5,7 +5,19 @@
   align-items: center;
   padding: 20px 50px;
   background-color: lightcoral;
-  height: 8vh;
+  height: 9vh;
+}
+
+.navbar h5 {
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 20px; /* Space between nav items */
 }
 
 .nav a {
@@ -26,17 +38,17 @@
 }
 
 .navbar-contact:hover {
-  background-color: white;
+  background-color: rgb(22, 187, 19);
   color: black;
 }
 
 .nav2 {
   display: flex;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: center;
 }
 
-.nav2 button{
+.nav2 button {
   background-color: lightcoral;
   color: white;
   border: none;
@@ -44,28 +56,28 @@
   border-radius: 50px;
   cursor: pointer;
   right: 10px;
-  border: 1px solid white;
-  margin-right: 10px;
+  border: 0.1px solid rgb(0, 0, 0);
+  margin-right: 5px;
 }
 
-.nav2 button:hover{
-  background-color: white;
-  color: black;
+.nav2 button:hover {
+  background-color: rgb(197, 64, 64);
+  color: white;
 }
 
 .profile {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  padding-left: 10px;
+  width: 80px;
 }
 
-.profile h5{
+.profile h5 {
   margin: 0;
 }
 
-.profile img{
+.profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -73,7 +85,3 @@
   object-fit: cover;
   color: aliceblue;
 }
-
-
-
-

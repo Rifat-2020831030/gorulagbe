@@ -16,6 +16,7 @@ const {GET} = require('../operation/GET');
 const {editProduct:Update} = require('../operation/Update');
 const {Delete} = require('../operation/Delete');
 const {GetById} = require('../operation/GetById');
+const {GetAList} = require('../operation/GetAList');
 
 // routes
 
@@ -31,6 +32,8 @@ router.get('/get/auction/:id', registered, getAuction);
 
 // get by id
 router.get('/get/:tableName/:idField/:id', registered, GetById);
+// get a list of items by ids
+router.post('/get/:tableName/:idField', GetAList);
 // get by category
 router.post('/search/:tableName', product.searchByCategory);
 
