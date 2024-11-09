@@ -12,3 +12,5 @@ const NewCattle = () => {
         </>
     )
 }
+
+export default NewCattle;

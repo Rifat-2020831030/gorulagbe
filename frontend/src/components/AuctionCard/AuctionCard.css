@@ -1,0 +1,79 @@
+.CARD {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  width: 900px;
+  height: 200px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+}
+.CARD:hover {
+  border: navy;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.4);
+}
+.CARD h4 {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.righty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.Ongoing {
+  color: azure;
+  background-color: #059144;
+  padding: 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.Ended {
+  color: azure;
+  background-color: rgb(193, 21, 21);
+  padding: 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.auc_name {
+  font-size: 20px;
+  padding: 20px;
+  margin-right: 250px;
+}
+.timer {
+  font-size: 20px;
+  top: 30px;
+}
+.timer00 {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  padding-inline: 20px;
+  border-radius: 5px;
+}
+.NOC {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.quantity {
+  font-weight: bolder;
+  font-size: 22px;
+}
+.ED {
+  font-size: 16px;
+  bottom: 30px;
+}
