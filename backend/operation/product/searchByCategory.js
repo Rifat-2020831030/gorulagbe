@@ -7,6 +7,7 @@ const searchByCategory = async (req, res) => {
 
     const limit = req.params.limit;
     const offset = req.params.offset;
+    // const isFilter = req.params.isFilter;
 
     // category sample
     // category = {
@@ -17,7 +18,7 @@ const searchByCategory = async (req, res) => {
     // } 
 
     // create a sql query to search products by each category
-    let sql = `SELECT * FROM ${tableName} WHERE `;
+    let sql = `SELECT * FROM ${tableName} where `;
     let sqlArr = [];
 
     for (let key in category) {

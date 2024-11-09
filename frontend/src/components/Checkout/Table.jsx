@@ -2,7 +2,7 @@ import cowImg from "../../assets/cow1.jpg";
 
 const Table = ({ cartData, Charges, shipping }) => {
   function productTotal(item) {
-    return item.price * item.quantity;
+    return item.price * 1;
   }
 
   return (
@@ -17,7 +17,7 @@ const Table = ({ cartData, Charges, shipping }) => {
       </thead>
       <tbody>
         {cartData.map((item) => (
-          <tr key={item.id} className="border-solid border border-grey">
+          <tr key={item.cattle_id} className="border-solid border border-grey">
             <td className="py-4">
               <div className="flex items-center">
                 <img
@@ -25,14 +25,14 @@ const Table = ({ cartData, Charges, shipping }) => {
                   src={cowImg}
                   alt="Product image"
                 />
-                <span className="font-semibold">{item.name}</span>
+                <span className="font-semibold">{item.breed}</span>
               </div>
             </td>
             <td className="py-4">{item.price}</td>
             <td className="py-4">
               <div className="flex items-center">
                 <button className="border rounded-md py-2 px-4 mr-2">-</button>
-                <span className="text-center w-8">{item.quantity}</span>
+                <span className="text-center w-8">{1}</span>
                 {/* disable this button */}
                 <button className="border rounded-md py-2 px-4 ml-2" disabled>
                   +

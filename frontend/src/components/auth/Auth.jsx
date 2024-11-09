@@ -15,19 +15,17 @@ const Auth = ({ page, setToken, setIsVisible }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
-        { email, mobile, password }
-      ),
+      body: JSON.stringify({ email, mobile, password }),
     })
       .then((res) => res.json())
       .then((data) => {
-        const {token, message, role} = data;
+        const { token, message, role } = data;
         if (token) {
           setToken(token);
           localStorage.setItem("token", token);
           console.log(data);
-        }
-        else {
+          window.location.reload();
+        } else {
           alert(message);
         }
       });
@@ -47,8 +45,8 @@ const Auth = ({ page, setToken, setIsVisible }) => {
           setToken(data.token);
           localStorage.setItem("token", data.token);
           console.log(data);
-        }
-        else {
+          window.location.reload();
+        } else {
           alert(data.message);
         }
       })
@@ -56,7 +54,6 @@ const Auth = ({ page, setToken, setIsVisible }) => {
         console.error("There was a problem with the fetch operation:", error);
       });
   };
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -74,8 +71,16 @@ const Auth = ({ page, setToken, setIsVisible }) => {
 
   return (
     <>
-      <div className="auth-container" >
-      <span className="modal-close" onClick={()=> {setIsVisible(false); console.log("click")} }>&times;</span>
+      <div className="auth-container">
+        <span
+          className="modal-close"
+          onClick={() => {
+            setIsVisible(false);
+            console.log("click");
+          }}
+        >
+          &times;
+        </span>
         <div className="auth-content">
           <p className="heading">
             {page === "login" ? "Login" : "Registration"}
@@ -85,7 +90,7 @@ const Auth = ({ page, setToken, setIsVisible }) => {
               type="email"
               className="input"
               placeholder="Email"
-              required = {page === "login" ? false : true}
+              required={page === "login" ? false : true}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -95,7 +100,7 @@ const Auth = ({ page, setToken, setIsVisible }) => {
               name="mobile"
               className="input"
               placeholder="Mobile Number"
-              required = {page === "login" ? false : true}
+              required={page === "login" ? false : true}
               onChange={(e) => {
                 setMobile(e.target.value);
               }}
@@ -149,7 +154,9 @@ const Auth = ({ page, setToken, setIsVisible }) => {
               }}
             />
 
-            <button className="form-button" onClick={submitHandler}>Submit</button>
+            <button className="form-button" onClick={submitHandler}>
+              Submit
+            </button>
           </form>
         </div>
       </div>
