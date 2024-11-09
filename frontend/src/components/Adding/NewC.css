@@ -1,41 +1,42 @@
-.page{
-    padding: 20px;
-    margin: 20px;
+.page {
+  padding: 20px;
+  margin: 20px;
 }
-
-.full{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    /* margin: 10px; */
-    height: 950px;
-    
+.page h1 {
+  font-size: 50px;
+  margin-left: 20px;
 }
-.left{
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 10px;
-    width: 650px;
-    border-radius: 8px;
-    margin-right: 20px;
-   
+.full {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  /* margin: 10px; */
+  height: 950px;
 }
-h3{
-    margin-left: 45px;
-    font-size: 35px;
+.left {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  width: 650px;
+  border-radius: 8px;
+  margin-right: 20px;
 }
-h2{
-    margin-left: 10px;
-    /* font-size: large; */
+h3 {
+  margin-left: 45px;
+  font-size: 35px;
 }
-.thumbnail{
-    /* text-align: center; */
-    border-radius: 8px;
-    margin-bottom: 85px;
+h2 {
+  margin-left: 10px;
+  /* font-size: large; */
+}
+.thumbnail {
+  /* text-align: center; */
+  border-radius: 8px;
+  margin-bottom: 85px;
 }
 /* .photo{
     display: flex;
@@ -48,199 +49,189 @@ h2{
     margin: 50px;
     height: 200px;
 } */
-p{
-    color: grey;
-    text-align: center;
-    
+p {
+  color: grey;
+  text-align: center;
 }
 
-.discount{
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin-top: 100px;
-    border-radius: 8px;
-
+.discount {
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 100px;
+  border-radius: 8px;
 }
-.des{
-    display: flex;
-    flex-direction: row;
+.des {
+  display: flex;
+  flex-direction: row;
 }
-.dis{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(30, 30, 127, 0.767);
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    width: 40px;
-    padding: 55px;
-    margin: 15px;
-    height: 40px;
-    cursor: pointer;
+.dis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(30, 30, 127, 0.767);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  width: 40px;
+  padding: 55px;
+  margin: 15px;
+  height: 40px;
+  cursor: pointer;
 }
-.dis:hover{
-    color: azure;
-    background-color: rgba(11, 11, 59, 0.767);
-    font-size: large;
+.dis:hover {
+  color: azure;
+  background-color: rgba(11, 11, 59, 0.767);
+  font-size: large;
 }
-.dis:focus{
-    background-color: rgba(30, 92, 178, 0.767);
-    color: black;
-    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.7);
-    font-size: large;
+.dis:focus {
+  background-color: rgba(30, 92, 178, 0.767);
+  color: black;
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.7);
+  font-size: large;
 }
-.right{
-        display: flex;
-        flex-direction: column;
-        border: 2px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin: 10px;
-        margin-right: 80px;
-        width: 70%;
-        border-radius: 8px;
-        
-    
+.right {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  margin-right: 80px;
+  width: 70%;
+  border-radius: 8px;
 }
 
-#form{
-    padding: 10px;
-    background-color: #f6f6f6;
-    font-size: larger;
-    /* margin: 100px; */
-    line-height: 6;
+#form {
+  padding: 10px;
+  background-color: #f6f6f6;
+  font-size: larger;
+  /* margin: 100px; */
+  line-height: 6;
 }
-.category{
-    
-    margin-right: 17px;
-    margin-left: 15px;
+.category {
+  margin-right: 17px;
+  margin-left: 15px;
 }
-#category{
-    width: 90px;
+#category {
+  width: 90px;
 }
-.a{
-    margin-right: 10px;
-    margin-left: 15px;
+.a {
+  margin-right: 10px;
+  margin-left: 15px;
 }
-input, select{
-    border-radius: 10px;
-    border: 3px solid grey;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+input,
+select {
+  border-radius: 10px;
+  border: 3px solid grey;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
-#age{
-   
-    text-align: center;
-    height: 40px;
-    margin-left: 45px;
-    margin-right: 50px;
+#age {
+  text-align: center;
+  height: 40px;
+  margin-left: 45px;
+  margin-right: 50px;
 }
-#breed{
-    text-align: center;
-    height: 40px;
-    width: 280px;
-    margin-left: 120px;
+#breed {
+  text-align: center;
+  height: 40px;
+  width: 280px;
+  margin-left: 120px;
 }
-#weight{
-    text-align: center;
-    height: 40px;
-    width: 280px;
-   
+#weight {
+  text-align: center;
+  height: 40px;
+  width: 280px;
 }
 
-#gender{
-    text-align: center;
-    height: 40px;
-    width: 200px;
-    margin-right: 56px;
-    margin-left: 20px;
-   
+#gender {
+  text-align: center;
+  height: 40px;
+  width: 200px;
+  margin-right: 56px;
+  margin-left: 20px;
 }
 
-#colour{
-    text-align: center;
-    height: 40px;
-    width: 200px;
-    margin-right: 60px;
-    margin-left: 25px;
+#colour {
+  text-align: center;
+  height: 40px;
+  width: 200px;
+  margin-right: 60px;
+  margin-left: 25px;
 }
-#height{
-    text-align: center;
-    height: 40px;
-    width: 280px;
-    margin-left: 100px;
+#height {
+  text-align: center;
+  height: 40px;
+  width: 280px;
+  margin-left: 100px;
 }
-#teeth{
-    text-align: center;
-    height: 40px;
-    width: 180px;
-    margin-right: 65px;
+#teeth {
+  text-align: center;
+  height: 40px;
+  width: 180px;
+  margin-right: 65px;
 }
-#vaccination{
-    width: 90px;
-    height: 40px;
-    margin-left: 60px;
+#vaccination {
+  width: 90px;
+  height: 40px;
+  margin-left: 60px;
 }
-h4{
-    font-size: 25px;
-    font-weight: bolder;
+h4 {
+  font-size: 25px;
+  font-weight: bolder;
 }
-#price{
-    text-align: center;
-    height: 56px;
-    width: 590px;
-
+#price {
+  text-align: center;
+  height: 56px;
+  width: 590px;
 }
-.btn{
-    display: flex;
-    flex-direction: row;
-    /* margin-top: 0px; */
-    margin-left: 20px;
-    
+.btn {
+  display: flex;
+  flex-direction: row;
+  /* margin-top: 0px; */
+  margin-left: 20px;
 }
-.cancel{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 10px;
-    background-color: #ddd;
-    color: black;
-    font-size: 20px;
-    height: 60px;
-    width: 350px;
-    border-radius: 10px;
-    margin-left: 45px;
+.cancel {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+  background-color: #ddd;
+  color: black;
+  font-size: 20px;
+  height: 60px;
+  width: 350px;
+  border-radius: 10px;
+  margin-left: 45px;
 }
-.cancel:hover{
-    text-decoration: none;
-    background-color: rgb(215, 103, 38);
-    color: white;
+.cancel:hover {
+  text-decoration: none;
+  background-color: rgb(215, 103, 38);
+  color: white;
 }
-.confirm
-{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 10px;
-    background-color: black;
-    color: #ddd;
-    border:2px solid black;
-    font-size: 20px;
-    height: 60px;
-    width: 350px;
-    border-radius: 10px;
+.confirm {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+  background-color: black;
+  color: #ddd;
+  border: 2px solid black;
+  font-size: 20px;
+  height: 60px;
+  width: 350px;
+  border-radius: 10px;
 }
-.confirm:hover{
-    background-color: rgb(81, 81, 243);
-    border: 2px solid black;
-    color: black;
-    font-size: 25px;
-    transition-duration: 0.7s;
-
+.confirm:hover {
+  background-color: rgb(74, 179, 90);
+  border: 2px solid black;
+  color: black;
+  font-size: 25px;
+  transition-duration: 0.7s;
 }
-input:active,select:active{
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+input:active,
+select:active {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
 }

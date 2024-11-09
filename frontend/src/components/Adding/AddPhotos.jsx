@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import "./AddPhotos.css"
-const ImageUploader = ({handleImage}) => {
+import React, { useState, useRef } from "react";
+import "./AddPhotos.css";
+const ImageUploader = ({ handleImage }) => {
   const [image, setImage] = useState(null);
   const fileInputRef = useRef(null);
 
@@ -21,9 +21,18 @@ const ImageUploader = ({handleImage}) => {
 
   return (
     <div>
-      <div className='photo' onClick={handleDivClick}>
+      <div className="photo" onClick={handleDivClick}>
         {image ? (
-          <img src={image} alt="Uploaded" style={{ width: '100%', height: '100%', objectFit: 'cover' ,marginTop: '14px'}} />
+          <img
+            src={image}
+            alt="Uploaded"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              marginTop: "14px",
+            }}
+          />
         ) : (
           <p>+Add Photos</p>
         )}
@@ -33,7 +42,7 @@ const ImageUploader = ({handleImage}) => {
         accept="image/*"
         ref={fileInputRef}
         onChange={handleFileChange}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </div>
   );

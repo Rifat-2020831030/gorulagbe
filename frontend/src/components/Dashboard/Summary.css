@@ -1,147 +1,185 @@
-.Headline{
-    margin-left: 70px;
-    font-size: 60px;
+.Headline {
+  margin-left: 70px;
+  font-size: 60px;
 }
 
-.full{
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    height: 60%;
-    
+.full {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  height: 60%;
 }
 
-.lefty{
-    color: rgb(36, 35, 65);
-    font-size: 19px;
-    width: 20%;
-    height: auto;
-    position: initial;
-    padding: 60px 30px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    /* background-color: rgb(92, 150, 160); */
-}
-.vl{
-    border-left: 2px solid black;
-    border-radius: 100px;
-    height: 1400px;
-    margin-top: 20px;
-}
-.righty{
-    width: 82%;
-    margin-right: 350px;
-    margin: 0%;
-    font-size: 15px;
-    position: initial;
-    padding: 20px;
-    
-}
-.Boxes{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    padding: 10px;
-    height: auto;
-    
+.lefty {
+  color: rgb(36, 35, 65);
+  font-size: 25px;
+  width: 25%;
+  height: auto;
+  padding: 60px 40px;
+  height: 1050px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: start;
+  background-color: rgb(103, 224, 139);
+  /* border-radius: 10px; */
 }
 
-.New1{
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    
-    background-color: rgb(113, 156, 137);
-    font-weight: bold;
-    color: black;
-    border-radius: 10px;
-    text-align: center;
-    padding: 100px 60px;
-    font-size: 30px;
-    margin: 10px 0px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-    text-align: center
-} 
-
-.New1:hover{
-    text-decoration: none;
-    color: white;
-    background-color: rgb(26, 39, 69);
-    transition-duration: .5s;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+.righty {
+  width: 82%;
+  margin-right: 450px;
+  margin: 0%;
+  height: 1000px;
+  font-size: 15px;
+  position: initial;
+  padding: 20px;
 }
-.Statistics{
-    background-color: lightblue;
-    border-radius: 10px;
-    color: black;
-    padding: 0px 70px;
-    text-align: center;
-    margin-right: 60px;
-    padding-top: 60px;
-    margin-left: 50px;
-
-}
-.number1{
-    font-size: 20px;
-    font-weight: 600;
-}
-.number{
-    font-size: 50px;
-    font-weight: bold;
-}
-.auction{
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    border-radius: 10px;
-    padding: 7px;
-}
-.auc1{
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-}
-.auc2{
-    display: flex;
-    flex-direction: column;
-    margin-top: 70px;
-    margin-right:  20px;
-}
-.Time{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 29px;
-}
-.liveAuctionBox{
-    background-color: lightcyan;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding: 10px 20px;
-    width: 100%;
-    
-}
-.liveAuction{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    text-align: center;
-    font-size: large;
-}
-.cattles{
-    margin-bottom: 100px;
-}
-h2{
-    margin-right: 700px;
-}
-.postedCattleBox{
-    
-     display: flex;
-     overflow-x: auto;
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 20px;
+.Boxes {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  margin-top: 150px;
+  padding: 10px;
+  height: 200px;
 }
 
+.New1 {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+
+  background-color: rgb(113, 156, 137);
+  font-weight: bold;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 60px 60px;
+  font-size: 30px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.New1:hover {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(26, 39, 69);
+  transition-duration: 0.5s;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+}
+.Statistics {
+  background-color: lightblue;
+  border-radius: 10px;
+  color: black;
+  padding: 0px 70px;
+  text-align: center;
+  margin-right: 60px;
+  padding-top: 25px;
+  margin-left: 50px;
+}
+.number1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.number {
+  font-size: 40px;
+  font-weight: bold;
+}
+.auction {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border-radius: 10px;
+  padding: 7px;
+}
+.auc1 h3 {
+  margin-right: 10px;
+  margin-bottom: 27px;
+}
+.auc1 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+.auc2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-right: 20px;
+}
+.Time {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 29px;
+}
+/* .liveAuctionBox {
+  background-color: lightcyan;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  height: 600px;
+} */
+.liveAuctionBox {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  overflow-y: auto; /* Enables vertical scrolling */
+  gap: 16px; /* Optional: Add space between items */
+  max-height: 400px; /* Optional: Set a max height to limit the size */
+  padding: 10px 0; /* Optional: Padding for better spacing */
+}
+
+.liveAuctionBox::-webkit-scrollbar {
+  width: 8px; /* Customize the scrollbar's width */
+}
+
+.liveAuctionBox::-webkit-scrollbar-thumb {
+  background: #888; /* Customize the scrollbar thumb */
+  border-radius: 4px;
+}
+
+.liveAuctionBox::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Customize the scrollbar thumb when hovered */
+}
+
+.liveAuction {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  text-align: center;
+  font-size: large;
+}
+.cattles {
+  margin-bottom: 100px;
+}
+h2 {
+  margin-right: 700px;
+}
+.postedCattleBox {
+  display: flex;
+  overflow-y: auto;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+}
+/* .postedCattleBox {
+  display: flex;
+  overflow-x: auto; 
+  gap: 16px;
+  padding: 10px 0; 
+}
+
+.postedCattleBox::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.postedCattleBox::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 4px;
+}
+
+.postedCattleBox::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} */
