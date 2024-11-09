@@ -23,14 +23,14 @@ const AuctionCard = ({ auction }) => {
           Auction ID: <b>{auction.auction_id}</b>
         </h4>
         <br />
-        <span className="auc_name">
-          <b>Auction Name:</b> {auction.auction_name}
-        </span>
-        <br />
-        <br />
-        <span className="NOC">
+        <div className="auc_name">
+          <b>Auction Name:</b>
+          {auction.auction_name}
+        </div>
+
+        <p className="NOC">
           Number of Cows: <span className="quantity">{auction.quantity}</span>
-        </span>
+        </p>
       </div>
       <div className="righty">
         <div className={auction.status ? "Ongoing" : "Ended"}>
